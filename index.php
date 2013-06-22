@@ -50,7 +50,7 @@
                   
                 <div class="clear"></div>
                 <footer>                    
-                    &copy 2013 <a href="mailto:seanockert@gmail.com">Sean Ockert</a> | <a href="edit/" title="Edit this page">Edit</a>
+                    &copy 2013 <a href="http://balsamade.com/dine">Dine</a> by <a href="mailto:seanockert@gmail.com">Sean Ockert</a> | <a href="edit/" title="Edit this page">Edit</a>
                 </footer>
             </div>
         </div>
