@@ -1,0 +1,335 @@
+/*  Default body styles ---------------------- */
+
+html {
+}
+
+body {
+  background: $color-off-white;
+  color: $color-base-font;
+  padding: 0;
+  margin: 0;
+  font-family: $base-font-family;
+  font-weight: $normal;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Miscellaneous useful HTML classes ---------------------- */
+.left         { float: left !important; }
+.right        { float: right !important; }
+.text-left    { text-align: left !important; }
+.text-right   { text-align: right !important; }
+.text-center  { text-align: center !important; }
+.text-justify { text-align: justify !important; }
+.hidden         { display: none; }
+
+// Antialiased font smoothing works best for light text on a dark background.
+// Apply to single elements instead of globally to body.
+// Note this only applies to webkit-based desktop browsers on the Mac.
+.antialiased { -webkit-font-smoothing: antialiased; }
+
+
+/* Buttons  ---------------------- */
+  
+button, .button, input[type=submit] {
+  @include button();
+  
+  &.green {
+    @include button-green();
+  }
+}
+
+
+/* Links  ---------------------- */
+
+a {
+  color: $color-blue;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+    color: darken($color-blue, 10%);
+  }
+}
+
+// Override outline from normalize, we don't like it
+a:focus { outline: none; }
+
+
+/* Lists  ---------------------- */
+
+ul, ol {
+  li {
+    margin-bottom: $base-padding/2;
+  }
+}
+
+
+/* Header  ---------------------- */
+
+#header {
+
+}
+
+#logo {
+    background: url("http://placehold.it/200x45");
+    height:45px;
+    width:200px;
+    @include hide-text;
+}
+
+#edit h1 {
+  float: left;
+  
+  a {
+    color: $color-off-black;
+    text-decoration: none;
+    
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
+
+#logout-container {
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  
+  a {
+    display: inline-block;
+    padding: $base-padding;
+  }
+}
+
+nav ul {
+  @include navigation-list;
+  li {
+    a {
+      display: block;
+      padding: $base-padding;
+      text-decoration: none;
+      color: $color-base-font;
+      
+      &.button {
+        margin-right: $base-padding;
+      }
+      
+      &:hover {
+        background: $color-light-grey;
+        text-decoration: none;
+      }
+      
+      &:active {
+        background: $color-dark;
+        color: #fff;
+      }      
+      
+      &.active {
+        font-weight: $bold;
+      }
+    }
+  }
+}
+
+.content {
+  border-bottom: 1px solid $color-light-grey;
+  margin-bottom: $base-padding;
+  padding-bottom: $base-padding;
+}
+
+
+footer, #footer {
+  padding: $base-padding*3 0;
+}
+
+/* Reusable Layouts  ---------------------- */  
+
+.box {
+    padding: $base-padding;
+    margin-bottom: $base-padding*2;
+    background: #fff;
+    @include border-radius(3px);
+    border: 1px solid #bbb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+  padding: $base-padding*2;
+  position: fixed;
+  top: 0;
+  left: 50%;  
+  margin: 0;
+  margin-top: $base-padding*2; 
+  margin-left: -150px;
+  width: 300px;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  font-weight: $normal;
+  color: #fff;
+  cursor: pointer;
+  @include border-radius(3px);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; /* Safari */
+  opacity: 1;
+
+  &.alert-success {
+    background: #527e3e;
+    background: rgba(82,126,62,0.9);
+  }
+  
+  &.alert-error {
+    background: #a11717;
+    background: rgba(161,23,23,0.9);
+  } 
+  
+  &.active {
+    margin-top: -100px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);  
+    opacity: 1;
+  }   
+  
+  &.hidden {
+    margin-top: $base-padding*2;
+    opacity: 0;
+  } 
+}
+
+
+/* Hero Banner  ---------------------- */
+
+.hero { 
+  text-align: center;
+  padding: $base-padding*3 0;
+  background: $color-off-black;
+  color: $color-off-white;
+    
+  .columns {
+    font-size: 1.4em;
+    line-height: 1.4;
+  }
+ 
+  h2, h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    font-size: 2em;
+    line-height: 1;
+  }
+  
+  h3 {
+    color: $color-mute;
+  }
+  
+  .button {
+    font-size: 1em;
+    padding: $base-padding;
+  } 
+  
+  small {
+    font-size: $font-size-small;
+    display: block;
+    margin-top: $base-padding;
+  } 
+  
+}
+
+/* Content  ---------------------- */
+
+#content {
+  line-height: 1.5;
+  margin-bottom: $base-padding*2;
+}
+
+#menu {
+  @include blank-list;
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  h2 {
+    margin: $base-padding*2 0;
+  }
+}
+
+
+
+#footer {
+  padding: $base-padding*2 0;
+  background: $color-off-black;
+  color: $color-off-white;
+  
+  h4 {
+    font-weight: $normal;
+    padding: 0;
+    margin: 0;
+    margin-bottom: $base-padding;
+  }
+  
+  ul {
+    @include blank-list;
+  }
+}
+
+
+
+
+/* Mobile and up media queries  ---------------------- */
+@media #{$small} {
+
+}  
+
+
+/* Tablet and up media queries  ---------------------- */
+@media #{$medium} {
+  #header { 
+     text-align: left;
+  }  
+  
+
+  .hero { 
+    .columns {
+      font-size: 1.6em;
+      line-height: 1.4;
+    } 
+    .button {
+      font-size: 1.2em;
+    }       
+           
+  } 
+    
+  .two-cols {
+    -moz-column-count:2;
+    -webkit-column-count:2;
+    -ms-column-count:2;
+    column-count:2; 
+    
+    -webkit-column-gap: $base-padding*4;
+    column-gap: $base-padding*4;
+    
+    li {
+      -webkit-column-break-inside:avoid;
+      -moz-column-break-inside:avoid;
+      -ms-column-break-inside:avoid;
+      column-break-inside:avoid;
+      
+      &:first-child h3 {
+        margin-top: 0;
+      }
+    }
+    
+    .price, .options span {
+      float: right;
+    }
+  }    
+       
+} 
+
+/* Desktop and up media queries  ---------------------- */
+@media #{$desktop} {
+
+}   
+

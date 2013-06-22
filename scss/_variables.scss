@@ -1,0 +1,190 @@
+// This is the default html and body font-size for the base em value.
+$base-font-size: 16px !default;
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $base-font-size * 1em;
+}
+
+// Creating rems and pixels
+@function remCalc($pxWidth) {
+  @return $pxWidth / $base-font-size * 1rem;
+}
+
+// Grid Calculation for Percentages
+@function gridCalc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+// 12px of padding as a base (same as grid gutters)
+$base-padding: emCalc(24px)/2 !default;
+
+// Mixins for media queries
+$width-small: emCalc(480px) !default;
+$width-medium: emCalc(768px) !default;
+$width-desktop: emCalc(960px) !default;
+$width-wide: emCalc(1440px) !default;
+
+$small: "only screen and (min-width:"#{$width-small}")" !default;
+$medium: "only screen and (min-width:"#{$width-medium}")" !default;
+$desktop: "only screen and (min-width:"#{$width-desktop}")" !default;
+$wide: "only screen and (min-width:"#{$width-wide}")" !default;
+
+// HiDPI mixin. Default value set to 1.3 to target Google Nexus 7 (http://bjango.com/articles/min-device-pixel-ratio/)
+@mixin hidpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx) {
+    @content;
+  }
+}
+
+
+// Put all colours here - override for theme
+$color-base-font: #444;
+$color-off-white: #f7f7f7;
+$color-light-grey: #ddd;
+$color-dark: #333;
+$color-off-black: #111;
+$color-blue: #0093d3;
+$color-mute: #999;
+
+$color-facebook-blue: #3b5997;
+$color-twitter-blue: #32ccfe;
+$color-googleplus-red: #f23c26;
+
+$base-font-family: "Open Sans", sans-serif;
+
+$light: 200;
+$normal: 300;
+$bold: 700;
+$black: 900;
+
+$font-size-small: 14px;
+$font-size-large: 20px;
+
+
+$include-html-grid-classes: true !default;
+$include-html-form-classes: true !default;
+
+
+// We use this to do clear floats
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+.clear {clear:both;}
+
+$default-float: left !default;
+$default-opposite: right !default;
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+/* Buttons  ---------------------- */ 
+@mixin button() {
+	color: $color-dark;
+	font-weight: $bold;
+	font-size: $base-font-size;
+	text-decoration: none !important;
+	padding: $base-padding $base-padding*2;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	display:inline-block;
+	line-height: 1;
+	border: 1px solid #bbb;
+	box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.7);
+	@include letterpress(1);
+	@include border-radius(3px);
+	background: #f7f7f7;
+	@include linear-gradient(#f7f7f7, #e0e0e0, 1); 
+	
+	&:hover, &:focus {
+		color: $color-off-black;
+		background: #e3e3e3;
+		@include linear-gradient(#f7f7f7, #cecece, 1); 	
+	}
+	
+	&:active, &.active {
+		color: $color-off-black;
+		text-shadow: -1px -1px #999;	
+		border: 1px solid #515151;
+		border-bottom: 1px solid #999;
+		box-shadow: 0 0 1px #fff;
+		background: #515151; /* Old browsers */
+		@include linear-gradient(#515151, #a0a0a0, 1, #878787, 11%); 	
+	}	
+	
+	&.active {
+		color: #fff;
+	}
+}
+
+@mixin button-green() {
+	color: #fff;
+	text-shadow:-1px -1px 0 #333;
+	border: 1px solid #3d5b06;
+	
+	@include linear-gradient(#71a510, #55930e, 1); 
+	
+	&:hover, &:focus {
+		@include linear-gradient(#7eb812, #60a610, 1); 	
+	}
+	
+	&:active, &.active {
+		@include linear-gradient(#3d5b06, #55930e, 1, #55930e, 11%); 
+	}	
+}
+
+
+// Used to reset horizonal lists
+@mixin navigation-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+        float:left;
+        &:last-child{
+            margin-right:0px;
+        }
+    }
+}
+
+@mixin blank-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+    }
+}
+
+// Emboss top and bottom borders on boxes
+@mixin box-emboss($opacity, $opacity2){
+    box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}	
+
+// Lettpress effect on text
+@mixin letterpress($opacity){
+    text-shadow:white($opacity) 0 1px 0;
+}
+
+// Image replacement eg. on the site logo
+@mixin hide-text{
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+
