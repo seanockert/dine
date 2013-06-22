@@ -1,7 +1,7 @@
 <?php
     $cachefile = 'cache/index.html';  // Path and name of cached file
     $cachetime = 3600; // cache time in seconds 3600 = 1 hour
-    $is_cached = true; // Set to true to enable page caching in HTML
+    $is_cached = false; // Set to true to enable page caching in HTML
     
     // Check if the cached file is still fresh. If it is, serve it up and exit.
     if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
