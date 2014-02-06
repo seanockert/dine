@@ -13,7 +13,7 @@ if (isset($_GET['action'])) {
         if ((isset($_POST['username']))
         && (isset($_POST['password']))
         && ($_POST['username'] === $username)
-        && ($_POST['password'] === $password))
+        && (sha1($_POST['password'] + $salt) === $password))
         {
             $_SESSION['user']=true;
             $_SESSION['message'] = "Signed in. Start editing!";

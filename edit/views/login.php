@@ -4,12 +4,8 @@
         <div class="large-12 columns">   
            <form method="POST" action="controllers/login.php?action=login">
                 <h2>Sign In to Edit Your Website.</h2>
+               
                 <fieldset>
-                    <div class="clearfix">
-                        <?php if(isset($login_error)): ?>
-                            <p class="alert error"><?php echo $login_error; ?></p>
-                        <?php endif; ?>
-                    </div>
                     <div class="clearfix">
                         <label for="username">Username</label>
                         <div class="input">
@@ -23,7 +19,7 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" class="button green" value="Sign In">
+                       <br><input type="submit" class="button green" value="Sign In">
                     </div>
                 </fieldset>
                 <p><a class="brand" href="../">&larr; Back to <?php echo $siteTitle['content']; ?></a></p>
