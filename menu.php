@@ -1,43 +1,52 @@
 <?php
-    $cachefile = 'cache/menu.html';  // Path and name of cached file
-    $cachetime = 3600; // cache time in seconds 3600 = 1 hour
-    $is_cached = false; // Set to true to enable page caching in HTML
-    
+    error_reporting(E_ALL | E_WARNING | E_NOTICE);
+    ini_set('display_errors', true);
+
+    require('dine/db.php'); 
+
+    // Path and name of cached file
+    $cachefile = 'cache/index-'.time().'.html';
     // Check if the cached file is still fresh. If it is, serve it up and exit.
     if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
-      include($cachefile);
-      exit;
+    include($cachefile);
+        exit;
     }
     // if there is either no file OR the file to too old, render the page and capture the HTML.
     ob_start();
+    
+    $page = 'Menu';
+    
+    $option = $DB->read('options');
+    $categories = $DB->read('categories');
+    $items = $DB->read('items','item_order');
+    $subitems = $DB->read('subitems','title');
+
+    $siteOptions = array();
+    foreach ($option as $value) {
+        $siteOptions[$value['type']] = $value['content'];
+    }
 ?>
 
 <?php include('partials/header.php'); ?>
 
 <?php 
-    $db = new PDO("sqlite:appdata/$db_name"); 
-    $result = $db->query('SELECT * FROM items ORDER BY item_order');
-    $subitems = $db->query('SELECT * FROM subitems ORDER BY title');
-        
-    $db = NULL;
 
-    foreach($result as $menuitem) {
+
+    foreach($items as $menuitem) {
       $parent = $menuitem['category'];
-      if(!$options[$menuitem]) {
-          $options[$menuitem] = array();
-      }
       $menuitems[$parent][] = $menuitem;
     }    
     // Re-sort by category
     ksort($menuitems);    
     
+    $options = array();
     // Sort $subitems by parent_id and output $options array
     foreach($subitems as $item) {
-      $parent = $item['parent_id'];
-      if(!$options[$parent]) {
-          $options[$parent] = array();
+      $parentID = $item['parent_id'];
+      if(!isset($options[$parentID])) {
+          $options[$parentID] = array();
       }
-      $options[$parent][] = $item;
+      array_push($options[$parentID], $item);
     }   
 
 ?>
@@ -45,22 +54,22 @@
     	   <div class="row">
             	<header>
                     <a href="index.php" class="right button">Home</a>
-            		<h1><a href="./" title="Return to homepage"><?php echo $site_title; ?></a></h1>                   
+            		<h1><a href="./" title="Return to homepage"><?php echo $siteOptions['name']; ?></a></h1>                   
             	</header>
-            	<div id="menu">
+            	<ul id="menu">
                   <?php
-                    if (count($result) > 0) { 
+                    if (count($menuitems) > 0) { 
+                      $i = 0;
                       foreach($menuitems as $key => $category) {
-                            echo '<h2>' . $categories[$key] . '</h2><ul id="#category-' . $key . '" class="two-cols">';
+                        echo '<h2>' . $categories[$i] . '</h2>';
                             
                         foreach($category as $row) { ?>
                             
                             <li>
-                                <h3><?php echo $row['title']; ?> <span class="price"><?php echo $row['price']; ?></span></h3>
+                                <h3><?php echo $row['title']; ?> <strong class="price"><?php echo $row['price']; ?></strong></h3>
                                 <p class="description"><em><?php echo $row['description']; ?></em></p>
-                               
-                                
-                                  <?php if (count($options[$row['id']]) > 0) {  ?>
+                                                           
+                                  <?php if (isset($options[$row['id']]) && count($options[$row['id']]) > 0) {  ?>
                                   <ul class="options">
                                     <?php foreach($options[$row['id']] as $option) {  ?>
                                     <li><?php echo $option['title']; ?> <span><?php echo $option['price']; ?></span></li>      
@@ -69,17 +78,15 @@
                                 <?php } ?>
                             </li>    
                             <?php } ?>
-                            </ul><div class="clear"></div>
-                        <br><hr>
-                        
-                  <?  }    
+                        <br><hr><br>
+                  <?  
+                    ++$i;
+                    }    
+        
                   } else {
                     echo '<li><em>Sorry, there is nothing on the menu yet.</em></li>';
                   } ?>
-            	</div>
-            	<footer>
-                	&copy 2013 <a href="http://balsamade.com/dine">Dine</a> by <a href="mailto:seanockert@gmail.com">Sean Ockert</a> | <a href="edit/menu.php" title="Edit this page">Edit</a>
-            	</footer>
-            </div>
+            	</ul>
+            
 
 <?php include('partials/footer.php'); ?>

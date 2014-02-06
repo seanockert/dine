@@ -30,17 +30,6 @@ $medium: "only screen and (min-width:"#{$width-medium}")" !default;
 $desktop: "only screen and (min-width:"#{$width-desktop}")" !default;
 $wide: "only screen and (min-width:"#{$width-wide}")" !default;
 
-// HiDPI mixin. Default value set to 1.3 to target Google Nexus 7 (http://bjango.com/articles/min-device-pixel-ratio/)
-@mixin hidpi($ratio: 1.3) {
-	@media only screen and (-webkit-min-device-pixel-ratio: $ratio),
-	only screen and (min--moz-device-pixel-ratio: $ratio),
-	only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
-	only screen and (min-resolution: #{round($ratio*96)}dpi),
-	only screen and (min-resolution: #{$ratio}dppx) {
-		@content;
-	}
-}
-
 
 // Put all colours here - override for theme
 $color-base-font: #444;
@@ -48,10 +37,14 @@ $color-off-white: #f7f7f7;
 $color-light-grey: #ddd;
 $color-dark: #333;
 $color-off-black: #111;
-$color-blue: #0093d3;
+$color-blue: #1BA1C4;
+$color-purple: #5d1f6a;
 $color-mute: #999;
+$color-dark-brown: #1B140E;
+$color-dark-blue: #012a48;
 
 $color-red: #a11717;
+$color-green2: #40AC5A;
 $color-green: #527e3e;
 
 $color-facebook-blue: #3b5997;
@@ -91,7 +84,6 @@ $default-opposite: right !default;
   box-sizing: $type;
 }
 
-
 // Set box-sizing globally to handle padding and border widths
 *,
 *:before,
@@ -124,13 +116,6 @@ $default-opposite: right !default;
     }
 }
 
-// Image replacement eg. on the site logo
-@mixin hide-text{
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
-}
-
 
 @mixin linear-gradient($from, $to, $ie: $useIEFilters, $mid: $to, $midPercent: 100%) {
   @if $ie != 1 { background-color: $to; }
@@ -148,4 +133,6 @@ $default-opposite: right !default;
     -ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'));
   }
 }
+
+
 

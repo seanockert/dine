@@ -1,0 +1,123 @@
+
+$color-base-font: #444;
+
+$color-grey: #d8d8d8;
+
+$color-green: #77E427;
+$color-blue: #14B8DB;
+
+$base-padding: 14px !default;
+
+$base-font-family: sans-serif;
+
+$black: 700;
+
+$font-size-base: 16px;
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    float: left;
+    margin: 20px;
+  }
+}
+
+body {
+  background: #f7f7f7;
+}
+
+
+/* Button Styles for Fruit Ninja Store  ---------------------- */ 
+
+@mixin block-button() {
+  margin: -3px 0 1px 0 !important;
+  padding: $base-padding $base-padding*2;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  line-height: $base-padding;
+  zoom:1;
+  color: #fff;
+  font-family: $base-font-family;
+  font-weight: bold;
+  font-size: $font-size-base;
+  text-decoration: none !important;
+  text-align: center;  
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); 
+  box-shadow: 1px 2px 0px 2px rgba(0,0,0,0.15);
+  border: none;
+  border-bottom: 5px solid darken($color-grey,8%);
+
+  &:after, &:before {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both;
+    visibility: hidden;
+  }
+  
+  &:hover, &:focus {
+    background: darken($color-grey,3%);
+    border-bottom: 5px solid darken($color-grey,10%);
+    outline: none;
+  }
+  
+  &:active {
+    margin-top: 0 !important;
+    border-bottom: 2px solid darken($color-grey,10%);
+  } 
+}
+
+@mixin block-button-green() {    
+  background: $color-green;
+  border-bottom: 5px solid darken($color-green,8%); 
+  
+  &:hover, &:focus {
+    background: darken($color-green,3%);
+    border-color: darken($color-green,10%);
+  }
+  
+  &:active {
+    border-bottom: 2px solid darken($color-green,10%);
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
+    margin-bottom: -5px;
+    
+  } 
+}
+
+@mixin block-button-blue() {    
+  background: $color-blue;
+  border-bottom: 5px solid darken($color-blue,8%); 
+  
+  &:hover, &:focus {
+    background: darken($color-blue,3%);
+    border-color: darken($color-blue,10%);
+  }
+  
+  &:active {
+    border-bottom: 2px solid darken($color-blue,10%);
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
+  } 
+}
+
+
+
+/* Attache Button Style Mixin to Elements */
+.button,
+button {
+  @include block-button;
+  
+  &.green {
+    @include block-button-green;
+  }    
+  
+  &.blue {
+    @include block-button-blue;
+  }  
+}
+
+

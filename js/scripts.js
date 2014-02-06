@@ -17,7 +17,8 @@ $(document).ready(function ($) {
     $('.totop').click(function(){
       $("html, body").animate({ scrollTop: 0 }, 600);
       return false;
-    });       
+    });    
+
 
 
     // Toggle the main navigation menu button for small screens  

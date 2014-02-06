@@ -1,3 +1,5 @@
+
+
 /*  Default body styles ---------------------- */
 
 html {
@@ -27,17 +29,6 @@ body {
 // Apply to single elements instead of globally to body.
 // Note this only applies to webkit-based desktop browsers on the Mac.
 .antialiased { -webkit-font-smoothing: antialiased; }
-
-
-/* Buttons  ---------------------- */
-  
-button, .button, input[type=submit] {
-  @include button();
-  
-  &.green {
-    @include button-green();
-  }
-}
 
 
 /* Links  ---------------------- */
@@ -137,7 +128,6 @@ nav ul {
   padding-bottom: $base-padding;
 }
 
-
 footer, #footer {
   padding: $base-padding*3 0;
 }
@@ -148,50 +138,9 @@ footer, #footer {
     padding: $base-padding;
     margin-bottom: $base-padding*2;
     background: #fff;
-    @include border-radius(3px);
+    border-radius: 3px;
     border: 1px solid #bbb;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.alert {
-  padding: $base-padding*2;
-  position: fixed;
-  top: 0;
-  left: 50%;  
-  margin: 0;
-  margin-top: $base-padding*2; 
-  margin-left: -150px;
-  width: 300px;
-  text-align: center;
-  background: rgba(0,0,0,0);
-  font-weight: $normal;
-  color: #fff;
-  cursor: pointer;
-  @include border-radius(3px);
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; /* Safari */
-  opacity: 1;
-
-  &.alert-success {
-    background: #527e3e;
-    background: rgba(82,126,62,0.9);
-  }
-  
-  &.alert-error {
-    background: #a11717;
-    background: rgba(161,23,23,0.9);
-  } 
-  
-  &.active {
-    margin-top: -100px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);  
-    opacity: 1;
-  }   
-  
-  &.hidden {
-    margin-top: $base-padding*2;
-    opacity: 0;
-  } 
 }
 
 
@@ -244,17 +193,28 @@ footer, #footer {
 
 #menu {
   @include blank-list;
-  
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-  
-  h2 {
-    margin: $base-padding*2 0;
-  }
 }
 
+
+form { 
+
+  .bootstrapSkin .mceIframeContainer {
+    padding: $base-padding;
+    padding-top: 0;
+  }
+  
+  .allowed-tags {
+     max-width: 100%; 
+     padding: $base-padding; 
+     font-size: $font-size-small; 
+     color: $color-mute; 
+  }
+  
+  .form-actions {
+     padding: $base-padding*2;
+  
+  }
+}
 
 
 #footer {
@@ -291,41 +251,15 @@ footer, #footer {
   
 
   .hero { 
-    .columns {
-      font-size: 1.6em;
-      line-height: 1.4;
-    } 
-    .button {
-      font-size: 1.2em;
-    }       
-           
-  } 
-    
-  .two-cols {
-    -moz-column-count:2;
-    -webkit-column-count:2;
-    -ms-column-count:2;
-    column-count:2; 
-    
-    -webkit-column-gap: $base-padding*4;
-    column-gap: $base-padding*4;
-    
-    li {
-      -webkit-column-break-inside:avoid;
-      -moz-column-break-inside:avoid;
-      -ms-column-break-inside:avoid;
-      column-break-inside:avoid;
-      
-      &:first-child h3 {
-        margin-top: 0;
-      }
-    }
-    
-    .price, .options span {
-      float: right;
-    }
-  }    
-       
+      .columns {
+        font-size: 1.6em;
+        line-height: 1.4;
+      } 
+      .button {
+        font-size: 1.2em;
+      }       
+             
+    }    
 } 
 
 /* Desktop and up media queries  ---------------------- */
