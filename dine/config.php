@@ -16,7 +16,7 @@ $uploadpath = ABSPATH . "../images/uploads/";
 $is_cached = true; // Set to true to enable page caching in HTML
 $cachetime = 3600; // cache time in seconds 3600 = 1 hour
 
-
+$currency = '$';
 
 function array_orderby() {
     $args = func_get_args();

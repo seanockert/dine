@@ -24,6 +24,11 @@
     $siteOptions = array();
     foreach ($option as $value) {
         $siteOptions[$value['type']] = $value['content'];
+    }    
+    
+    $catTitle = array();
+    foreach ($categories as $cat) {
+        array_push($catTitle, $cat['title']);
     }
 ?>
 
@@ -61,18 +66,23 @@
                     if (count($menuitems) > 0) { 
                       $i = 0;
                       foreach($menuitems as $key => $category) {
-                        echo '<h2>' . $categories[$i] . '</h2>';
+                        echo '<h2>' . $catTitle[$i] . '</h2>';
                             
                         foreach($category as $row) { ?>
                             
                             <li>
-                                <h3><?php echo $row['title']; ?> <strong class="price"><?php echo $row['price']; ?></strong></h3>
+                                <h3><?php echo $row['title']; ?> 
+                                <strong class="price">
+                                  <?php echo $currency; echo $row['price']; ?>
+                                </strong></h3>
                                 <p class="description"><em><?php echo $row['description']; ?></em></p>
                                                            
                                   <?php if (isset($options[$row['id']]) && count($options[$row['id']]) > 0) {  ?>
                                   <ul class="options">
                                     <?php foreach($options[$row['id']] as $option) {  ?>
-                                    <li><?php echo $option['title']; ?> <span><?php echo $option['price']; ?></span></li>      
+                                    <li><?php echo $option['title']; ?> <span>
+                                      <?php echo $currency; echo $option['price']; ?>
+                                    </span></li>      
                                     <?php } ?>
                                 </ul>
                                 <?php } ?>

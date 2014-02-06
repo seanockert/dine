@@ -44,6 +44,7 @@
               <input type="hidden" name="action" value="delete" >
               <input type="submit" name="submit" value="Delete" class="delete">
             </form>
+            <hr>
           </div>
         <?php } ?>          
         <?php } else {

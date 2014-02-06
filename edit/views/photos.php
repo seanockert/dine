@@ -22,7 +22,7 @@ if ($_SESSION['user'] = true) {
     <div id="content">
         
         <div id="header">
-            <h1>Edit Gallery</h1>
+            <h1>Edit Photos</h1>
             <div class="clear"></div> 
         </div>
 
