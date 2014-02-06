@@ -135,7 +135,7 @@ label {
   width: 300px;
 }
 
-@media #{$medium} {
+@media #{$medium-up} {
     textarea {
         width: 80%;
     }  

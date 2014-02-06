@@ -1,11 +1,8 @@
 <?php
-    error_reporting(E_ALL | E_WARNING | E_NOTICE);
-    ini_set('display_errors', true);
-
     require('dine/db.php'); 
 
     // Path and name of cached file
-    $cachefile = 'cache/index-'.time().'.html';
+    $cachefile = 'cache/index.html';
     // Check if the cached file is still fresh. If it is, serve it up and exit.
     if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
     include($cachefile);

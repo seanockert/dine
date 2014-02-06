@@ -1,0 +1,122 @@
+$modules: () !default;
+@mixin exports($name) {
+  @if (index($modules, $name) == false) {
+    $modules: append($modules, $name);
+    @content;
+  }
+}
+
+//
+// @functions
+//
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
+
+
+
+
+/* Mixins */
+  
+/* Clear floats */  
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+} 
+.clearfix {
+  @include clearfix();
+} 
+
+.clear {
+  clear:both;
+}
+  
+/* Replaced by Bourbon functions */
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+@mixin box-sizing($type:border-box) {
+  -moz-box-sizing: $type;
+  -webkit-box-sizing: $type;
+  box-sizing: $type;
+}
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// Used to reset horizonal lists
+@mixin navigation-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+        float:left;
+        &:last-child{
+            margin-right:0px;
+        }
+    }
+}
+
+@mixin blank-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+    }
+}
+
+// Image replacement eg. on the site logo
+@mixin hide-text{
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}

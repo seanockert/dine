@@ -1,4 +1,5 @@
 @import "reset.scss";
+@import "../functions.scss";
 @import "variables.scss";
 @import "forms.scss";
 @import "reveal.scss";
@@ -350,7 +351,7 @@ tr.slip-reordering {
 
 
 
-@media #{$medium} {
+@media #{$medium-up} {
 
 
 

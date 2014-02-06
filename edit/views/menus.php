@@ -63,7 +63,7 @@ if ($_SESSION['user'] == true) {
       <div class="alert <?php echo $_SESSION['alertType']; ?>"><?php echo $_SESSION['message']; ?></div>
 
       <h3>Categories</h3>
-      <ul class="nolist">
+      <ul class="nolist clearfix">
       <?php 
         foreach($categoryList as $category) { ?>
           <li data-id="<?php echo $category['id']; ?>"><?php echo $category['title']; ?> 
@@ -76,8 +76,7 @@ if ($_SESSION['user'] == true) {
              
       <?php } ?>
       </ul>
-     <div class="clear"></div>
-     <p><a href="#" data-reveal-id="add-category" data-parent="<?php echo $row['id']; ?>" class="add-category button green">Add Category</a></p>
+     <a href="#" data-reveal-id="add-category" data-parent="<?php echo $row['id']; ?>" class="add-category button green">Add Category</a>
      
      <hr>       
 

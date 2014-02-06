@@ -1,11 +1,8 @@
 <?php
-    error_reporting(E_ALL | E_WARNING | E_NOTICE);
-    ini_set('display_errors', true);
-
     require('dine/db.php'); 
 
     // Path and name of cached file
-    $cachefile = 'cache/index-'.time().'.html';
+    $cachefile = 'cache/menu.html';
     // Check if the cached file is still fresh. If it is, serve it up and exit.
     if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
     include($cachefile);
@@ -55,48 +52,65 @@
     }   
 
 ?>
-        <div class="container">
-    	   <div class="row">
-            	<header>
-                    <a href="index.php" class="right button">Home</a>
-            		<h1><a href="./" title="Return to homepage"><?php echo $siteOptions['name']; ?></a></h1>                   
-            	</header>
-            	<ul id="menu">
-                  <?php
-                    if (count($menuitems) > 0) { 
-                      $i = 0;
-                      foreach($menuitems as $key => $category) {
-                        echo '<h2>' . $catTitle[$i] . '</h2>';
-                            
-                        foreach($category as $row) { ?>
-                            
-                            <li>
-                                <h3><?php echo $row['title']; ?> 
-                                <strong class="price">
-                                  <?php echo $currency; echo $row['price']; ?>
-                                </strong></h3>
-                                <p class="description"><em><?php echo $row['description']; ?></em></p>
-                                                           
-                                  <?php if (isset($options[$row['id']]) && count($options[$row['id']]) > 0) {  ?>
-                                  <ul class="options">
-                                    <?php foreach($options[$row['id']] as $option) {  ?>
-                                    <li><?php echo $option['title']; ?> <span>
-                                      <?php echo $currency; echo $option['price']; ?>
-                                    </span></li>      
-                                    <?php } ?>
-                                </ul>
-                                <?php } ?>
-                            </li>    
-                            <?php } ?>
-                        <br><hr><br>
-                  <?  
-                    ++$i;
-                    }    
+<div class="container">
+  
+  <div class="hero clearfix">
+    <div class="row">
+        <div class="columns large-4">
+          <h1><a href="./" title="Return to homepage"><?php echo $siteOptions['name']; ?></a></h1>  
+        </div> 
+         
+        <div class="columns large-3 small-6">
+          <?php echo nl2br($siteOptions['hours']); ?>
+        </div>          
         
-                  } else {
-                    echo '<li><em>Sorry, there is nothing on the menu yet.</em></li>';
-                  } ?>
-            	</ul>
-            
+        <div class="columns large-3 small-6">
+          <?php echo nl2br($siteOptions['address']); ?> 
+        </div>          
+        
+        <div class="columns large-2">
+          <a href="./" class="menu">Home</a> 
+        </div>                   
+        
+    </div>
+  </div>
+  
+   <div class="row">
+      	<ul id="menu">
+            <?php
+              if (count($menuitems) > 0) { 
+                $i = 0;
+                foreach($menuitems as $key => $category) {
+                  echo '<h2>' . $catTitle[$i] . '</h2>';
+                      
+                  foreach($category as $row) { ?>
+                      
+                      <li>
+                          <h3><?php echo $row['title']; ?> 
+                          <strong class="price">
+                            <?php echo $currency; echo $row['price']; ?>
+                          </strong></h3>
+                          <p class="description"><em><?php echo $row['description']; ?></em></p>
+                                                     
+                            <?php if (isset($options[$row['id']]) && count($options[$row['id']]) > 0) {  ?>
+                            <ul class="options">
+                              <?php foreach($options[$row['id']] as $option) {  ?>
+                              <li><?php echo $option['title']; ?> <span>
+                                <?php echo $currency; echo $option['price']; ?>
+                              </span></li>      
+                              <?php } ?>
+                          </ul>
+                          <?php } ?>
+                      </li>    
+                      <?php } ?>
+            <?  
+              ++$i;
+              }    
+  
+            } else {
+              echo '<li><em>Sorry, there is nothing on the menu yet.</em></li>';
+            } ?>
+      	</ul>
+    </div>
 
 <?php include('partials/footer.php'); ?>

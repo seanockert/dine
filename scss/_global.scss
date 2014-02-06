@@ -2,9 +2,6 @@
 
 /*  Default body styles ---------------------- */
 
-html {
-}
-
 body {
   background: $color-off-white;
   color: $color-base-font;
@@ -27,7 +24,6 @@ body {
 
 // Antialiased font smoothing works best for light text on a dark background.
 // Apply to single elements instead of globally to body.
-// Note this only applies to webkit-based desktop browsers on the Mac.
 .antialiased { -webkit-font-smoothing: antialiased; }
 
 
@@ -43,7 +39,6 @@ a {
   }
 }
 
-// Override outline from normalize, we don't like it
 a:focus { outline: none; }
 
 
@@ -63,34 +58,9 @@ ul, ol {
 }
 
 #logo {
-    background: url("http://placehold.it/200x45");
-    height:45px;
-    width:200px;
-    @include hide-text;
+  
 }
 
-#edit h1 {
-  float: left;
-  
-  a {
-    color: $color-off-black;
-    text-decoration: none;
-    
-    &:hover {
-      color: $color-blue;
-    }
-  }
-}
-
-#logout-container {
-  border-top: none;
-  border-radius: 0 0 3px 3px;
-  
-  a {
-    display: inline-block;
-    padding: $base-padding;
-  }
-}
 
 nav ul {
   @include navigation-list;
@@ -122,66 +92,45 @@ nav ul {
   }
 }
 
-.content {
-  border-bottom: 1px solid $color-light-grey;
-  margin-bottom: $base-padding;
-  padding-bottom: $base-padding;
-}
-
-footer, #footer {
-  padding: $base-padding*3 0;
-}
-
 /* Reusable Layouts  ---------------------- */  
 
 .box {
     padding: $base-padding;
-    margin-bottom: $base-padding*2;
     background: #fff;
-    border-radius: 3px;
-    border: 1px solid #bbb;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 
 /* Hero Banner  ---------------------- */
 
 .hero { 
-  text-align: center;
-  padding: $base-padding*3 0;
-  background: $color-off-black;
-  color: $color-off-white;
-    
-  .columns {
-    font-size: 1.4em;
-    line-height: 1.4;
-  }
- 
-  h2, h3 {
+  background: $color-purple;
+  color: #fff;
+  padding: $base-padding 0;
+  
+  h1 {
     margin: 0;
-    padding: 0;
+    text-align: center;
+    
+    a:hover {
+      text-decoration: none;
+    }
   }
   
-  h2 {
-    font-size: 2em;
-    line-height: 1;
+  a {
+    color: #fff;
   }
   
-  h3 {
-    color: $color-mute;
-  }
-  
-  .button {
-    font-size: 1em;
-    padding: $base-padding;
-  } 
-  
-  small {
-    font-size: $font-size-small;
+  .menu {
     display: block;
-    margin-top: $base-padding;
-  } 
-  
+    padding: $base-padding;
+    text-align: center;
+    background: darken($color-purple, 10%);
+    
+    &:hover {
+      background: darken($color-purple, 20%); 
+      text-decoration: none; 
+    }
+  }
 }
 
 /* Content  ---------------------- */
@@ -196,39 +145,12 @@ footer, #footer {
 }
 
 
-form { 
 
-  .bootstrapSkin .mceIframeContainer {
-    padding: $base-padding;
-    padding-top: 0;
-  }
-  
-  .allowed-tags {
-     max-width: 100%; 
-     padding: $base-padding; 
-     font-size: $font-size-small; 
-     color: $color-mute; 
-  }
-  
-  .form-actions {
-     padding: $base-padding*2;
-  
-  }
-}
-
-
-#footer {
+footer, #footer {
   padding: $base-padding*2 0;
-  background: $color-off-black;
-  color: $color-off-white;
-  
-  h4 {
-    font-weight: $normal;
-    padding: 0;
-    margin: 0;
-    margin-bottom: $base-padding;
-  }
-  
+  margin-top: $base-padding*2; 
+  border-top: 1px solid $color-light-grey;
+
   ul {
     @include blank-list;
   }
@@ -238,32 +160,27 @@ form {
 
 
 /* Mobile and up media queries  ---------------------- */
-@media #{$small} {
+@media #{$small-up} {
 
 }  
 
 
-/* Tablet and up media queries  ---------------------- */
-@media #{$medium} {
-  #header { 
-     text-align: left;
-  }  
-  
 
-  .hero { 
-      .columns {
-        font-size: 1.6em;
-        line-height: 1.4;
-      } 
-      .button {
-        font-size: 1.2em;
-      }       
-             
-    }    
+/* Tablet and up media queries  ---------------------- */
+@media #{$medium-up} {
+  .hero {
+      padding: $base-padding*6 0;
+      font-size: $font-size-large;
+        
+      h1 {
+        text-align: left;
+      }
+  }
+   
 } 
 
 /* Desktop and up media queries  ---------------------- */
-@media #{$desktop} {
+@media #{$large-up} {
 
 }   
 
