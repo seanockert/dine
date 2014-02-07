@@ -2,26 +2,28 @@
   
   <div class="hero clearfix">
     <div class="row">
-        <div class="columns large-4">
+        <div class="columns large-12">
           <h1><a href="./" title="Return to homepage"><?php echo $site_options->name; ?></a></h1>  
+          <br>
         </div> 
-         
-        <div class="columns large-3 small-6 hours">
+
+        <div class="columns large-5 small-6 hours">
           <h3>Open Hours</h3>
           <?php echo nl2br($site_options->hours); ?><br>
           <?php echo $helper->format_days($site_options->days); ?>
         </div>          
         
-        <div class="columns large-3 small-6 location">
+        <div class="columns large-5 small-6 location">
           <h3>Address</h3>
           <?php echo nl2br($site_options->address); ?><br>
           <a href="<?php echo $helper->map_address($site_options->address); ?>" title="View on Google Maps">View on map</a> 
-        </div>          
+        </div> 
         
         <div class="columns large-2">
           <a href="menu.php" class="menu">Menu</a> 
-        </div>                   
+        </div>           
         
+       
         <div class="clear"></div>
     </div>
   </div>
