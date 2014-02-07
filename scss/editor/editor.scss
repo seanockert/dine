@@ -41,23 +41,33 @@ h3 {
 
 /* Login form */
 #login {
+  background: $color-purple;
+  
     
   h2 {
     text-align: center;
+    color: #fff;
+    margin: 0;
     margin-bottom: $base-padding*2;
+    padding-top: $base-padding*2;
   }
   
   p {
     text-align: center;
   }
+  
+  a {
+    color: #fff;
+  }
       
   form {
-    max-width: 400px;
-    margin: $base-padding*8 auto;
+    width: 90%;
+    margin: 0 auto;
     
     fieldset {
       padding: $base-padding;
       margin-bottom: $base-padding*2;
+      box-shadow: none;
     }
     
     input[type="text"],
@@ -272,6 +282,7 @@ table.item-list tbody input.button {
   padding: 6px 8px;
   margin: 6px;
   margin-right: 0;
+  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
 }
 
 .add-subitem:hover, .add-subitem:focus {
@@ -375,10 +386,16 @@ tr.slip-reordering {
   }
 }
 
-
+.categories {
+  li {
+    float: none;
+    padding: 0;
+    padding-bottom: $base-padding/2;
+    margin: 0;
+  }
+}
+  
 @media #{$medium-up} {
-
-
 
   html {
     border-top: 20px solid $color-purple;
@@ -391,6 +408,12 @@ tr.slip-reordering {
   .column-3 {
     width: 33.33333%;
   }
+
+  #login {
+    form {
+      width: 400px;
+    } 
+  }   
 
 
 }  

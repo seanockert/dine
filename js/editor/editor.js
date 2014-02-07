@@ -55,9 +55,13 @@ $(document).ready(function(){
     }).mouseup(function(e){
         e.preventDefault();
     });   
+        
+    $('.item-list select').change(function() {
+      $(this).parents('tr').find('.edit-item').submit();
+    });   
     
     var selectedDays = [0,0,0,0,0,0,0];
-    if ($('#days-input')) {
+    if ($('#days-input').val()) {
         selectedDays = ($('#days-input').val()).split(',');
         for(var i=selectedDays.length; i--;) selectedDays[i] = selectedDays[i]|0; // Convert to numbers 
     }

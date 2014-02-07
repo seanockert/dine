@@ -22,7 +22,7 @@
                        <br><input type="submit" class="button green" value="Sign In">
                     </div>
                 </fieldset>
-                <p><a class="brand" href="../">&larr; Back to <?php echo $siteTitle['content']; ?></a></p>
+                <p><a class="brand" href="../">&larr; Back to <?php echo $title->content; ?></a></p>
             </form>    
         </div>    
     </div>    

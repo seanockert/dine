@@ -1,4 +1,5 @@
 <?php
+
   if ($_SESSION['user'] == true) 
   {
      $contents = $DB->read('contents'); 
@@ -7,7 +8,7 @@
   <body id="edit">
 
     <div id="sidebar"> 
-      <h2><a class="brand" href="../" title="Return to site"><?php echo $siteTitle['content']; ?></a></h2>
+      <h2><a class="brand" href="../" title="Return to site"><?php echo $title->content; ?></a></h2>
       <nav>
         <ul>
             <li><a href="./" class="active">Content</a></li>
@@ -32,15 +33,15 @@
           foreach($contents as $row) { ?>      
           <div class="content">
             <form method="post" action="controllers/contents.php">
-              <h4><input type="text" name="title" value="<?php echo $row['title']; ?>" placeholder="Title of content"></h4>
-              <textarea name="content" placeholder="Start writing here..."><?php echo $row['content']; ?></textarea>
-              <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+              <h4><input type="text" name="title" value="<?php echo $row->title; ?>" placeholder="Give this section a name"></h4>
+              <textarea name="content" placeholder="Add content here..."><?php echo $row->content; ?></textarea>
+              <input type="hidden" name="id" value="<?php echo $row->id; ?>">
               <input type="hidden" name="position" value="top">
               <input type="hidden" name="action" value="update">
-              <p><br><input type="submit" value="Update" class="button green"></p>            
+              <p><br><input type="submit" value="Update" class="button blue"></p>            
             </form>
             <form method="post" action="controllers/contents.php" class="delete-content">
-              <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+              <input type="hidden" name="id" value="<?php echo $row->id; ?>">
               <input type="hidden" name="action" value="delete" >
               <input type="submit" name="submit" value="Delete" class="delete">
             </form>
@@ -57,8 +58,8 @@
         <div id="add-content" class="reveal-modal">
           <form method="post" action="controllers/contents.php">
             <h3>Add A Content Section</h3>
-            <h4><input type="text" name="title" value="" placeholder="Title of content"></h4>
-            <p><textarea name="content" placeholder="Start writing here..."></textarea></p>
+            <h4><input type="text" name="title" value="" placeholder="Give this section a name"></h4>
+            <p><textarea name="content" placeholder="Add content here..."></textarea></p>
             <input type="hidden" name="position" value="top">
             <input type="hidden" name="action" value="add">
             <p><br><input type="submit" name="submit" value="Add Content Section" class="button green"></p>

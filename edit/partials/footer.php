@@ -1,5 +1,5 @@
 	<div id="footer">
-		<!--&copy; <?php echo date("Y"); ?>--> <a href="http://balsamade.com" class="logo"><img src="../images/dine-logo-mute.png"></a>
+		<a href="http://balsamade.com/dine" class="logo"><img src="../images/dine-logo-mute.png"></a>
 	</div>
     
     <script src="../js/vendor/jquery.min.js"></script>

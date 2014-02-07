@@ -111,11 +111,14 @@ class database {
       $db = new PDO("sqlite:$this->db_path");
       $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
       
-      $rows = $db->query('SELECT * FROM ' . $table . ' ORDER BY ' . $order);
+      $rows = $db->query('SELECT * FROM ' . $table . ' ORDER BY "' . $order . '"');
       $rows->setFetchMode(PDO::FETCH_ASSOC);
       $db = NULL;
       
-      return $rows;  
+      // Return an object
+      $data = $this->array_to_object($rows);
+    
+      return $data;  
             
     } catch (PDOException $e) {
       
@@ -135,7 +138,10 @@ class database {
       $row->setFetchMode(PDO::FETCH_ASSOC);
       $db = NULL;
       
-      return $row;  
+      // Return an object
+      $data = $this->array_to_object($row);      
+      
+      return $data->{'0'};  
             
     } catch (PDOException $e) {
       $this->setup();
@@ -144,6 +150,9 @@ class database {
     } 
   }  
   
+  // Input: the table name and ID of the page
+  // Output: the page data
+  // TODO: this function is currently unused
   public function readPage($table, $id) {
     try {
       
@@ -163,6 +172,8 @@ class database {
     } 
   }
 
+  // Input: table name, an array of data to update, the row ID, custom success message
+  // Output: update the row data in the specified table
   public function update($table, $data, $id, $success = null) {
     
     // Created timestamp
@@ -183,7 +194,11 @@ class database {
       $db = NULL;    
                
       if($query) {
-        $_SESSION['message'] = "Updated successfully";
+        if ($success) {
+          $_SESSION['message'] = $success;  
+        } else {
+          $_SESSION['message'] = "Updated successfully";        
+        }         
         $_SESSION['alertType'] = "alert success active";     
       }  else {
         $_SESSION['message'] = "Something went wrong and your data was not updated";
@@ -199,6 +214,8 @@ class database {
            
   }
 
+  // Input: table name, row ID, custom success message
+  // Output: delete the row from the table
   public function delete($table, $id, $success = null) {
     
     try {
@@ -208,7 +225,11 @@ class database {
 
       $query = $db->exec("DELETE FROM $table WHERE id = '$id';");
       if($query) {
-        $_SESSION['message'] = "Item deleted";
+        if ($success) {
+          $_SESSION['message'] = $success;  
+        } else {
+          $_SESSION['message'] = "Item deleted";         
+        }
         $_SESSION['alertType'] = "alert success active";
       } else {
         $_SESSION['message'] = "Something went wrong. Item was not deleted";
@@ -225,6 +246,8 @@ class database {
       
   }
   
+  // Input: a data array sent from the form
+  // Output: a formatted array for updating the database
   public function array_to_pdo_params($array) {
     $temp = array();
     foreach (array_keys($array) as $name) {
@@ -233,6 +256,7 @@ class database {
     return implode(', ', $temp);
   }
   
+  // Force the views to update by removing the cache files
   public function flush_cache() {
       $files = glob('../../cache/*');
       foreach($files as $file){
@@ -241,6 +265,22 @@ class database {
       }
       if( ob_get_level() > 0 ) ob_flush(); 
   }
+  
+  // Input: an array from the database
+  // Output: an object
+  public function array_to_object($array) {
+    $obj = new stdClass;
+    foreach($array as $k => $v) {
+       if(strlen($k)) {
+          if(is_array($v)) {
+             $obj->{$k} = $this->array_to_object($v); //RECURSION
+          } else {
+             $obj->{$k} = $v;
+          }
+       }
+    }
+    return $obj;
+  }   
   
 } 
 

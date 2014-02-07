@@ -31,7 +31,7 @@
   <body id="edit">
 
     <div id="sidebar"> 
-      <h2><a class="brand" href="../" title="Return to site"><?php echo $siteTitle['content']; ?></a></h2>
+      <h2><a class="brand" href="../" title="Return to site"><?php echo $title->content; ?></a></h2>
       <nav>
         <ul>
             <li><a href="./">Content</a></li>  
@@ -52,24 +52,23 @@
 
         <div class="<?php echo $_SESSION['alertType']; ?>"><?php echo $_SESSION['message']; ?></div>
         <form method="post" action="controllers/options.php">
-        <?php
-        if ($options) {
-          while($option = $options->fetch()) { ?>      
+        <?php if (count($options) > 0) {
+          foreach($options as $option) { ?>     
           <div class="option">
-               <?php if ($option['type'] == 'username') { ?>
+               <?php if ($option->type == 'username') { ?>
               <br><hr>
               <?php } ?>  
-              <label><?php echo ucfirst(str_replace('_', ' ', $option['type'])); ?></label>
+              <label><?php echo ucfirst(str_replace('_', ' ', $option->type)); ?></label>
               
-              <?php if ($option['type'] == 'address') { ?>
-                <textarea name="content[]" class="short" placeholder=""><?php echo $option['content']; ?></textarea>
-              <?php } else if ($option['type'] == 'hours') { ?>
-                <input type="text" name="content[]" value="<?php echo $option['content']; ?>" placeholder="9am - 5pm">
-              <?php } else if ($option['type'] == 'days') { ?>
-                <?php echo days_list($option['content']); ?>
-                <input type="hidden" name="content[]" id="days-input" value="<?php echo $option['content']; ?>">
+              <?php if ($option->type == 'address') { ?>
+                <textarea name="content[]" class="short" placeholder=""><?php echo $option->content; ?></textarea>
+              <?php } else if ($option->type == 'hours') { ?>
+                <input type="text" name="content[]" value="<?php echo $option->content; ?>" placeholder="9am - 5pm">
+              <?php } else if ($option->type == 'days') { ?>
+                <?php echo days_list($option->content); ?>
+                <input type="hidden" name="content[]" id="days-input" value="<?php echo $option->content; ?>">
               <?php } else { ?>
-                <input type="text" name="content[]" value="<?php echo $option['content']; ?>">
+                <input type="text" name="content[]" value="<?php echo $option->content; ?>">
               <?php } ?>
           </div>
         <?php }

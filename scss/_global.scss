@@ -61,6 +61,14 @@ ul, ol {
   
 }
 
+h3 {
+  margin-bottom: $base-padding/2;
+}
+
+p {
+  margin-top: 0;
+}
+
 
 nav ul {
   @include navigation-list;

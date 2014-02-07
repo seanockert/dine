@@ -13,10 +13,10 @@
     <script src="js/scripts.js"></script>       
     <script src="js/plugins.js" defer></script>
 
-    <?php if($siteOptions["analytics_code"] != '') { ?>
+    <?php if($site_options->analytics_code != '') { ?>
     <script>
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<?php echo $siteOptions["analytics_code"]; ?>']);
+        _gaq.push(['_setAccount', '<?php echo $site_options->analytics_code; ?>']);
         _gaq.push(['_trackPageview']);
         (function() {
         var ga = document.createElement(‘script’); ga.type = ‘text/javascript’; ga.async = true;
@@ -28,4 +28,4 @@
     </body>
 </html>
 
-<?php if ($is_cached) end_cache($page); ?>
+<?php if ($is_cached) $helper->end_cache($page); ?>

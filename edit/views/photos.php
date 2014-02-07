@@ -7,7 +7,7 @@ if ($_SESSION['user'] = true) {
   <body id="edit">
 
     <div id="sidebar"> 
-      <h2><a class="brand" href="../" title="Return to site"><?php echo $siteTitle['content']; ?></a></h2>
+      <h2><a class="brand" href="../" title="Return to site"><?php echo $title->content; ?></a></h2>
       <nav>
         <ul>
             <li><a href="./">Content</a></li>  
@@ -29,14 +29,14 @@ if ($_SESSION['user'] = true) {
         <div class="alert <?php echo $_SESSION['alertType']; ?>"><?php echo $_SESSION['message']; ?></div>
 
         <?php if (count($photos) > 0) {
-          foreach($photos as $row) { ?>      
+          foreach($photos as $photo) { ?>      
           <div class="column-3 photo">
 
             <form method="post" action="controllers/photos.php" class="delete-image">
-              <div class="img left"><img src="../images/uploads/<?php echo $row['src']; ?>" width="300"></div>                
-              <strong><?php echo $row['title']; ?></strong>  
-              <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-              <input type="hidden" name="src" value="<?php echo $row['src']; ?>">
+              <div class="img left"><img src="../images/uploads/<?php echo $photo->src; ?>" width="300"></div>                
+              <strong><?php echo $photo->title; ?></strong>  
+              <input type="hidden" name="id" value="<?php echo $photo->id; ?>">
+              <input type="hidden" name="src" value="<?php echo $photo->src; ?>">
               <input type="hidden" name="action" value="delete" >
               <input type="submit" name="submit" value="Delete" class="delete">
             </form>
