@@ -133,6 +133,7 @@ nav ul {
     background: #fff;
     color: $color-purple;
     text-shadow: none;
+    margin-top: $base-padding;
 
     &:hover {
       background: $color-purple;
@@ -171,7 +172,8 @@ nav ul {
 
 
 footer, #footer {
-  padding: $base-padding*2 0;
+  padding-top: $base-padding*2;
+  padding-bottom: $base-padding*2;
   margin-top: $base-padding*2; 
   border-top: 1px solid $color-light-grey;
 

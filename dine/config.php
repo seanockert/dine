@@ -18,8 +18,8 @@ $site_description = 'Fine dining';
 
 $upload_path = ABSPATH . "../images/uploads/";
 
-$is_cached = false; // Set to true to enable page caching in HTML
-$cachetime = 3600; // cache time in seconds 3600 = 1 hour
+$is_cached = true; // Set to true to enable page caching in HTML
+$cachetime = 120; // cache time in seconds 3600 = 1 hour
 
 $currency = '$';
 

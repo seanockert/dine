@@ -22,6 +22,7 @@
           <a href="menu.php" class="menu">Menu</a> 
         </div>                   
         
+        <div class="clear"></div>
     </div>
   </div>
   

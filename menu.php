@@ -67,12 +67,14 @@
         
         <div class="columns large-2">
           <a href="./" class="menu">Home</a> 
-        </div>                   
-        
+        </div>    
+                       
+        <div class="clear"></div>
     </div>
   </div>
   
    <div class="row">
+      <div class="columns large-6">
       	<ul id="menu">
             <?php
               if (count($menuitems) > 0) { 
@@ -108,6 +110,7 @@
               echo '<li><em>Sorry, there is nothing on the menu yet.</em></li>';
             } ?>
       	</ul>
+      </div>
     </div>
 
 <?php include('partials/footer.php'); ?>
