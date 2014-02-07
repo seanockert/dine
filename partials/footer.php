@@ -28,11 +28,4 @@
     </body>
 </html>
 
-<?php
-    // Save the cached content to a file
-    $fp = fopen($cachefile, 'w');
-    fwrite($fp, ob_get_contents());
-    fclose($fp);
-    // Send browser output
-    ob_end_flush();
-?>
+<?php if ($is_cached) end_cache($page); ?>

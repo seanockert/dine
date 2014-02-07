@@ -98,7 +98,7 @@ if ($_SESSION['user'] == true) {
     {
       $query = $DB->delete('subitems', $_POST['id']);
     }
-
+    $DB->flush_cache();
   	header('Location: ../menus.php');
   }
 

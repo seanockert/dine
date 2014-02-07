@@ -110,7 +110,7 @@ if ($_SESSION['user'] == true) {
               <?php printf('<tr class="%s" id="%s" title="Last modified: %s" data-order="%s">', ($row['id'] % 2) ? 'odd' : 'even', $row['id'], date('l jS \of F Y h:i:s A', $row['date_modified']),  $row['item_order']); ?>
 
               <form class="edit-item" method="post" action="controllers/menus.php">
-                <td class="move-handle"><input type="hidden" name="item_order" maxlength="2" class="item-order" value="<?php echo $row['item_order']; ?>"></td>
+                <td class="move-handle2"><input type="text" name="item_order" maxlength="2" class="item-order" value="<?php echo $row['item_order']; ?>"></td>
                 <td><input type="text" name="title" class="title" value="<?php echo $row['title']; ?>" placeholder="<?php echo $row['title']; ?>"></td>
                 <td><input type="text" name="description" value="<?php echo $row['description']; ?>" placeholder="<?php echo $row['description']; ?>"></td>
                 <td><input type="text" name="price" value="<?php echo $row['price']; ?>" placeholder="<?php echo $row['price']; ?>"></td>

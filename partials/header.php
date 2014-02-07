@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <title><?php echo $page; ?> - <?php echo $siteOptions['name']; ?></title>
+        <title><?php if($page != 'index') { echo ucfirst($page) . ' - ';} echo $siteOptions['name']; ?></title>
         <meta name="description" content="<?php echo $siteOptions['description']; ?>">
 
         <link rel="stylesheet" type="text/css" href="css/style.css"></link>

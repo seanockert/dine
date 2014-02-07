@@ -1,17 +1,10 @@
 <?php
+    require('dine/config.php'); 
     require('dine/db.php'); 
 
-    // Path and name of cached file
-    $cachefile = 'cache/menu.html';
-    // Check if the cached file is still fresh. If it is, serve it up and exit.
-    if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
-    include($cachefile);
-        exit;
-    }
-    // if there is either no file OR the file to too old, render the page and capture the HTML.
-    ob_start();
+    $page = 'menu';
     
-    $page = 'Menu';
+    if ($is_cached) set_cache($page, $cachetime);       
     
     $option = $DB->read('options');
     $categories = $DB->read('categories');
@@ -60,13 +53,17 @@
           <h1><a href="./" title="Return to homepage"><?php echo $siteOptions['name']; ?></a></h1>  
         </div> 
          
-        <div class="columns large-3 small-6">
-          <?php echo nl2br($siteOptions['hours']); ?>
+        <div class="columns large-3 small-6 hours">
+          <h3>Open Hours</h3>
+          <?php echo nl2br($siteOptions['hours']); ?><br>
+          <?php echo format_days($siteOptions['days']); ?>
         </div>          
         
-        <div class="columns large-3 small-6">
-          <?php echo nl2br($siteOptions['address']); ?> 
-        </div>          
+        <div class="columns large-3 small-6 location">
+          <h3>Address</h3>
+          <?php echo nl2br($siteOptions['address']); ?><br>
+          <a href="<?php echo map_address($siteOptions['address']); ?>" title="View on Google Maps">View on map</a> 
+        </div>           
         
         <div class="columns large-2">
           <a href="./" class="menu">Home</a> 

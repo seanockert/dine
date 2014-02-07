@@ -14,7 +14,9 @@ class database {
     'description',
     'address',
     'phone',
+    'email',
     'hours',
+    'days',
     'analytics_code',
     //'username',
     //'password'
@@ -229,6 +231,15 @@ class database {
       $temp[] = "'$name' = :$name";
     }
     return implode(', ', $temp);
+  }
+  
+  public function flush_cache() {
+      $files = glob('../../cache/*');
+      foreach($files as $file){
+        if(is_file($file))
+          unlink($file);
+      }
+      if( ob_get_level() > 0 ) ob_flush(); 
   }
   
 } 

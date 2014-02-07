@@ -14,22 +14,13 @@ if ($_SESSION['user'] == true) {
     */
     if($action == 'setup')
     {   
-        $query = $DB->setup();    
-        
+        $query = $DB->setup();            
     }
     
-    //Save the content to database
     else if($action == 'flushcache')
-    {  
-      $files = glob('../../cache/*');
-      foreach($files as $file){
-        if(is_file($file))
-          unlink($file);
-      }
-      if( ob_get_level() > 0 ) ob_flush();
+    {       
       $_SESSION['message'] = "Cache cleared. Your content is now be updated on the public site.";
-      $_SESSION['alertType'] = "alert success active";
-      
+      $_SESSION['alertType'] = "alert success active";   
     }
 
     else if($action == 'update-all')
@@ -50,7 +41,7 @@ if ($_SESSION['user'] == true) {
       }
 
     } 
-      
+    $DB->flush_cache();  
   	header('Location: ../options.php');
   }
 

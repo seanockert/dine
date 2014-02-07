@@ -5,7 +5,7 @@
     <script src="../js/vendor/jquery.min.js"></script>
     <script src="../js/editor/jquery.reveal.js"></script>    
     <script src="../js/editor/slip.js"></script>    
-    <script src="../js/editor/editor.js"></script>    
+    <script src="../js/editor/editor.js?v=2"></script>    
 
     <?php 
     // Clear alert after each page reload

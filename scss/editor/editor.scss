@@ -1,3 +1,13 @@
+/*! 
+Theme Name:     Dine
+Theme URI:      http://balsamade.com/dine
+Description:    A simple CMS for one-page restaurant sites
+Author:         Sean Ockert
+Author URI:     balsamade.com
+Version:        0.2
+License:    
+*/
+
 @import "reset.scss";
 @import "../functions.scss";
 @import "variables.scss";
@@ -349,6 +359,21 @@ tr.slip-reordering {
   }
 }
 
+
+#days-list {
+  li {
+    padding: 10px;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    color: $color-mute;
+    
+    &.active, &.selected {
+      background: $color-dark;
+      color: #fff;
+    }
+  }
+}
 
 
 @media #{$medium-up} {

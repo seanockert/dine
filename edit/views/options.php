@@ -1,7 +1,31 @@
 <?php
   if ($_SESSION['user'] == true) {
+    $options = $DB->read('options');  
     
-    $options = $DB->read('options');     
+    // Takes the list of currently active days and outputs a list of days of the week for selection
+    function days_list($data) {
+      $current_days = explode(',', $data);
+      $days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+      $selected_days = [0,0,0,0,0,0,0];
+      
+      $day_list = '<ul id="days-list" class="nolist">';
+      $active = '';
+      $i = 0;
+      foreach ($days as $day) {
+        if ($current_days[$i] == 1) { 
+          $active = 'active';
+          $selected_days[$i] = 1; 
+        } else {
+          $active = '';
+        }
+        
+        $day_list .= '<li class="' . $active . '" data-active="' . $selected_days[$i] . '" data-index="' . $i . '">' . ucfirst($day) . '</li>';
+        ++$i;
+      }
+      
+      return $day_list;
+      
+    }   
 ?>
   
   <body id="edit">
@@ -37,12 +61,16 @@
               <?php } ?>  
               <label><?php echo ucfirst(str_replace('_', ' ', $option['type'])); ?></label>
               
-              <?php if ($option['type'] == 'address' || $option['type'] == 'hours') { ?>
-              <textarea name="content[]" class="short" placeholder=""><?php echo $option['content']; ?></textarea>
+              <?php if ($option['type'] == 'address') { ?>
+                <textarea name="content[]" class="short" placeholder=""><?php echo $option['content']; ?></textarea>
+              <?php } else if ($option['type'] == 'hours') { ?>
+                <input type="text" name="content[]" value="<?php echo $option['content']; ?>" placeholder="9am - 5pm">
+              <?php } else if ($option['type'] == 'days') { ?>
+                <?php echo days_list($option['content']); ?>
+                <input type="hidden" name="content[]" id="days-input" value="<?php echo $option['content']; ?>">
               <?php } else { ?>
-              <input type="text" name="content[]" value="<?php echo $option['content']; ?>">
+                <input type="text" name="content[]" value="<?php echo $option['content']; ?>">
               <?php } ?>
-              <!--<input type="hidden" name="type" value="<?php echo $option['type']; ?>">-->
           </div>
         <?php }
         } ?> 
@@ -71,7 +99,7 @@
 
     </div>
 
-  <?php include('footer.php'); ?>
+  <?php include('partials/footer.php'); ?>
 
 <?php 
 } 

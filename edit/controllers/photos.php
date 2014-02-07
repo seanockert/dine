@@ -16,14 +16,14 @@ if ($_SESSION['user'] == true) {
   
       $src = $_FILES["imgfile"]["name"]; 
       
-      $upload = $uploadpath.basename($_FILES["imgfile"]["name"]);
+      $upload = $upload_path.basename($_FILES["imgfile"]["name"]);
       if (!move_uploaded_file($_FILES["imgfile"]["tmp_name"], $upload)) {
         die("There was an error uploading the file, please try again!");
       }    
       $image_name = $upload.$src;
       list($width,$height) = getimagesize($image_name);
       
-      //$new_image_name = $uploadpath.$_FILES["imgfile"]["name"];
+      //$new_image_name = $upload_path.$_FILES["imgfile"]["name"];
       
       /*
       if ($width > $height) {
@@ -65,10 +65,11 @@ if ($_SESSION['user'] == true) {
     
     else if($action == 'delete')
     {
-      unlink($uploadpath . $_POST['src']);
+      unlink($upload_path . $_POST['src']);
       $query = $DB->delete('photos',$_POST['id']);    
     }    
-      
+    
+    $DB->flush_cache();
   	header('Location: ../photos.php');
   }
 

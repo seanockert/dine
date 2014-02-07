@@ -12,7 +12,7 @@ $(document).ready(function(){
     });    
     
     // Confirm before deleting a menu item
-    $('.delete-item').submit( function() {
+    $('.delete-item').submit(function() {
         if (confirm('Are you sure you want to delete this item?')) {
             $(this).parents('tr').fadeOut(200, function() {
                 $(this).remove();
@@ -24,7 +24,7 @@ $(document).ready(function(){
     });      
     
     // Confirm before deleting a content section
-    $('.delete-content').submit( function() {
+    $('.delete-content').submit(function() {
         if (confirm('Are you sure you want to delete content? (This action cannot be undone)')) {
             return true;          
         } else {
@@ -33,7 +33,7 @@ $(document).ready(function(){
     });    
     
     // Confirm before deleting a image
-    $('.delete-image').submit( function() {
+    $('.delete-image').submit(function() {
         if (confirm('Are you sure you want to delete image? (This will completely remove the image)')) {
             return true;          
         } else {
@@ -41,7 +41,7 @@ $(document).ready(function(){
         }
     });
 
-    $('.add-subitem ').click( function() {
+    $('.add-subitem ').click(function() {
         console.log('add subitem');
         var parent = $(this).parents('tr').find('.title').val();
         var parentID = $(this).data('parent');
@@ -54,12 +54,37 @@ $(document).ready(function(){
         $(this).select();  
     }).mouseup(function(e){
         e.preventDefault();
-    });  
+    });   
+    
+    var selectedDays = [0,0,0,0,0,0,0];
+    if ($('#days-input')) {
+        selectedDays = ($('#days-input').val()).split(',');
+        for(var i=selectedDays.length; i--;) selectedDays[i] = selectedDays[i]|0; // Convert to numbers 
+    }
+    
+    // Selectable days on the options page
+    $('#days-list li').click(function() {
+      var $elem = $(this);
+      var index = $elem.data('index');
+      
+      if ($elem.hasClass('selected') || $elem.hasClass('active')) {
+        $(this).removeClass('selected').removeClass('active'); 
+        $elem.data('active', 0);   
+      } else {
+        $(this).addClass('selected');       
+        $elem.data('active', 1);
+      }
+      
+      selectedDays[index] = $elem.data('active');
+      console.log(selectedDays);
+      $('#days-input').val(selectedDays.toString());    
+    });    
     
     $('textarea').textareaAutoExpand(); 
 
 });
 
+/*
 
 // Sortable list on Menu page          
 var sortableList = $('.sliplist')[0];
@@ -99,7 +124,7 @@ sortableList.addEventListener('slip:reorder', function(e){
 new Slip(sortableList);
 
 // End Sortable list
-
+*/
 
 (function($){
   $.fn.textareaAutoExpand = function(){
@@ -113,10 +138,9 @@ new Slip(sortableList);
       if (textarea.css('box-sizing') === 'border-box' || 
           textarea.css('-moz-box-sizing') === 'border-box' || 
           textarea.css('-webkit-box-sizing') === 'border-box') {
-        height = textarea.outerHeight();
-        
-        if (this.scrollHeight + diff == height) // special case for Firefox where scrollHeight isn't full height on border-box
-          diff = 0;
+            height = textarea.outerHeight();
+            if (this.scrollHeight + diff == height) // special case for Firefox where scrollHeight isn't full height on border-box
+              diff = 0;
       } else {
         diff = 0;
       }

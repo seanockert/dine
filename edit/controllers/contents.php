@@ -50,7 +50,7 @@ if ($_SESSION['user'] == true) {
     {
       $query = $DB->delete('contents', $_POST['id']);
     }
-      
+    $DB->flush_cache(); 
   	header('Location: ../index.php');
   }
 

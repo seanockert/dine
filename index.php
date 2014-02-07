@@ -1,17 +1,13 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+    require('dine/config.php'); 
     require('dine/db.php'); 
 
-    // Path and name of cached file
-    $cachefile = 'cache/index.html';
-    // Check if the cached file is still fresh. If it is, serve it up and exit.
-    if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile) && $is_cached) {
-    include($cachefile);
-        exit;
-    }
-    // if there is either no file OR the file to too old, render the page and capture the HTML.
-    ob_start();
-    
-    $page = 'Home';
+    $page = 'index';
+
+    if ($is_cached) set_cache($page, $cachetime);   
     
     $options = $DB->read('options');
     $contents = $DB->read('contents');

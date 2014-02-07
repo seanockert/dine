@@ -34,7 +34,7 @@ if ($_SESSION['user'] == true) {
       
     //close the database connection
     $db = NULL;
-
+    $DB->flush_cache();
   	header('Location: ../menus.php');
   }
 
