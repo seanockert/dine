@@ -1,22 +1,3 @@
-<?php
-require('../dine/loader.php'); 
-
-session_start(); 
-
-$title = $DB->readSingle('options','content',1);
-
-?>
-<!doctype html>
-<html lang="en" id="login">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" sizes="32x32" href="../images/favicon.png">  
-    <title>Editing <?php echo $title->content; ?></title>
-    <link rel="stylesheet" type="text/css" href="../css/editor/editor.css"></link>
-  </head>
-
     <body>
         <div class="alert <?php echo $_SESSION['alertType']; ?>"><?php echo $_SESSION['message']; ?></div>
          <div class="row" id="header">

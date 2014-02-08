@@ -12,7 +12,9 @@
         <title><?php if($page != 'index') { echo ucfirst($page) . ' - ';} echo $site_options->name; ?></title>
         <meta name="description" content="<?php echo $site_options->description; ?>">
 
+        
         <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>

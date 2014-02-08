@@ -38,7 +38,7 @@
           <br>
         </div> 
 
-        <div class="columns large-5 small-6 hours">
+        <div class="columns large-4 small-6 hours">
           <h3>Open Hours</h3>
           <?php echo nl2br($site_options->hours); ?><br>
           <?php echo $helper->format_days($site_options->days); ?>
@@ -50,8 +50,8 @@
           <a href="<?php echo $helper->map_address($site_options->address); ?>" title="View on Google Maps">View on map</a> 
         </div>        
         
-        <div class="columns large-2">
-          <a href="./" class="menu">Home</a> 
+        <div class="columns large-3">
+          <a href="./" class="menu">Return Home</a> 
         </div>    
                        
         <div class="clear"></div>

@@ -14,7 +14,7 @@ if (!$_SESSION['message']) {
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" <?php if(!isset($_SESSION['user'])) { echo 'id="login"';} ?>>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,4 +22,5 @@ if (!$_SESSION['message']) {
     <link rel="shortcut icon" sizes="32x32" href="../images/favicon.png">  
     <title>Editing <?php echo $title->content; ?></title>
     <link rel="stylesheet" type="text/css" href="../css/editor/editor.css"></link>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   </head>

@@ -7,7 +7,7 @@
           <br>
         </div> 
 
-        <div class="columns large-5 small-6 hours">
+        <div class="columns large-4 small-6 hours">
           <h3>Open Hours</h3>
           <?php echo nl2br($site_options->hours); ?><br>
           <?php echo $helper->format_days($site_options->days); ?>
@@ -19,8 +19,8 @@
           <a href="<?php echo $helper->map_address($site_options->address); ?>" title="View on Google Maps">View on map</a> 
         </div> 
         
-        <div class="columns large-2">
-          <a href="menu.php" class="menu">Menu</a> 
+        <div class="columns large-3">
+          <a href="menu.php" class="menu">Dining Menu</a> 
         </div>           
         
        
@@ -51,7 +51,7 @@
         <div class="clear"></div>
         <br>
         
-        <div class="columns large-6 large-centered medium-centered">
+        <div class="columns large-4 large-centered medium-centered">
           <h3><?php
             if ($helper->is_open($site_options->days)) {
                 echo 'Yes, we\'re open today.';
