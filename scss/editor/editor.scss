@@ -14,10 +14,15 @@ License:
 @import "forms.scss";
 @import "reveal.scss";
 @import "sidebar.scss";
+@import "menu.scss";
 @import "buttons.scss";
 
 html {
   background: $color-off-white;
+  
+  &#login {
+    background: $color-purple;
+  }
 }
 
 
@@ -28,6 +33,8 @@ html {
   background: $color-off-white;
   width: 100%;
   padding-left: 20px;  
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #sidebar, #content {
@@ -41,7 +48,11 @@ h3 {
 
 /* Login form */
 #login {
-  background: $color-purple;
+  
+  body {
+    background: $color-purple;    
+  }
+
   
     
   h2 {
@@ -189,49 +200,6 @@ table.item-list {
 /* End Table Styles */
 
 
-/* Form Styles */
-
-form {
-  p {
-    margin: 0;
-    margin-bottom: 6px;
-  }
-  
-  select {
-    min-width: 100px;
-    max-width: 250px;
-  }
-  
-  input[type='text'] {
-    width: 300px;
-  } 
-  input.price {
-    width: 70px;
-  }  
-  input.long {
-    width: 430px;
-  }
-
-  textarea {
-    min-height: 60px;
-    width: 100%;
-          
-    &:focus {
-      background: #fff;
-    }
-  }
-    
-}
-
-  input.item-order {
-    width: 34px;
-    color: #999;
-    
-    &:focus {
-      color: #222;
-    }
-  }  
-  
 table.item-list tbody input[type='text'] {
   background: transparent;
   border: none;
@@ -249,33 +217,13 @@ table.item-list tbody input[type='text'] {
   }    
 } 
 
-input.delete, input.delete:hover, input.delete:focus,
-.add-subitem {
-  border: none;
-  background: transparent;
-  color: #666;
-  text-decoration: underline !important;
-  padding: 6px;
-  line-height: 1.5;
-  margin-top: 0 !important;
-  font-weight: 400;
-}
-
-input.delete:hover, input.delete:focus {
-  text-decoration: underline !important;
-  color: red;
-}
-
-form.delete-category {
-  display: inline-block;
-  margin: 0;
-}
-
-/* Form Styles */
-
 
 
 /* Button Styles */
+
+form input.button {
+  border-radius: none !important;
+}
   
 .button.small,
 table.item-list tbody input.button {
@@ -283,6 +231,7 @@ table.item-list tbody input.button {
   margin: 6px;
   margin-right: 0;
   box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
+  border-radius: none;
 }
 
 .add-subitem:hover, .add-subitem:focus {
@@ -329,7 +278,7 @@ tr.slip-reordering {
 
 #footer {
   text-align: left;
-  padding-left: 240px;  
+  padding-left: 20px;  
   padding-right: 20px;
   padding-top: 40px;
   line-height: 150%;
@@ -340,10 +289,22 @@ tr.slip-reordering {
     width: 80px;
     height: auto;
   }
+  
+  a {
+    color: $color-mute;
+  }
 }
 
 
 /* Helper Classes */
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 
 .reveal-modal {
   form {
@@ -414,6 +375,10 @@ tr.slip-reordering {
       width: 400px;
     } 
   }   
+
+  #footer {
+    padding-left: 240px;  
+  }
 
 
 }  

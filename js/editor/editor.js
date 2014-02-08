@@ -1,8 +1,8 @@
 $(document).ready(function(){
     // Fade out alert messages
-    $('.alert').delay(2000).fadeOut(500).removeClass('active');
+    $('.alert').delay(1500).fadeOut(200).removeClass('active');
     $('.alert').click(function(){
-        $(this).fadeOut(200);
+        $(this).fadeOut(50).removeClass('active');
     });
     
     $(".item-list tr").hover(function() {

@@ -16,10 +16,8 @@
 	
 	.reveal-modal {
 		visibility: hidden;
-		top: 100px; 
-		left: 50%;
-		margin-left: -300px;
-		width: 520px;
+		top: 20px; 
+		width: 90%;
 		background: #eee;
 		position: absolute;
 		z-index: 101;
@@ -54,3 +52,15 @@
 		}
 	} 
 	
+
+
+@media #{$medium-up} {
+	
+	.reveal-modal {
+		top: 100px; 
+		left: 50%;
+		margin-left: -300px;
+		width: 520px;
+	}	
+	
+}	

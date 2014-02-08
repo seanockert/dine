@@ -33,6 +33,10 @@
     <div id="sidebar"> 
       <h2><a class="brand" href="../" title="Return to site"><?php echo $title->content; ?></a></h2>
       <nav>
+        <a href="#" id="menu-icon">
+          <div></div><div></div><div></div>
+        </a>
+                
         <ul>
             <li><a href="./">Content</a></li>  
             <li><a href="./menus.php">Menus</a></li>   
