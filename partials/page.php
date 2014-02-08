@@ -4,7 +4,6 @@
     <div class="row">
         <div class="columns large-12">
           <h1><a href="./" title="Return to homepage"><?php echo $site_options->name; ?></a></h1>  
-          <br>
         </div> 
 
         <div class="columns large-4 small-6 hours">

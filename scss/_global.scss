@@ -121,6 +121,7 @@ nav ul {
     margin: 0;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: $base-padding*2;
     
     a:hover {
       text-decoration: none;
@@ -153,6 +154,17 @@ nav ul {
       background: #fff;
       color: $color-dark-brown; 
       text-decoration: none; 
+    }
+  }
+  
+  &.menu-hero {
+    h1 {
+      text-align: left;
+      margin-bottom: 0;
+    }
+    
+    .menu {
+      margin-top: 0;
     }
   }
 }
@@ -209,12 +221,13 @@ footer, #footer {
 /* Tablet and up media queries  ---------------------- */
 @media #{$medium-up} {
   .hero {
-      padding: $base-padding*10 0;
-      font-size: $font-size-large;
-        
-      h1 {
-        padding-bottom: $base-padding;
-      }
+    padding: $base-padding*10 0;
+    font-size: $font-size-large;
+    
+    
+    &.menu-hero {
+      padding: $base-padding*2 0;
+    }
   }
    
 } 

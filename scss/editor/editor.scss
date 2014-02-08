@@ -80,6 +80,7 @@ h3 {
     
     fieldset {
       padding: $base-padding;
+      padding-bottom: $base-padding*2;
       margin-bottom: $base-padding*2;
       box-shadow: none;
     }
@@ -93,7 +94,11 @@ h3 {
       background: $color-off-white;
       width: 100%;
     }
-    
+      
+    .button {
+      width: 100%;
+    }    
+  
     label {     
       margin-bottom: $base-padding/2;
     }
