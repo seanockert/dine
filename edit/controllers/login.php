@@ -31,7 +31,14 @@ if (isset($_GET['action'])) {
         
         $_SESSION['message'] = "You're now logged out";
         $_SESSION['alertType'] = "alert success active";
+        $logout = true;
         break;
     }
-    header('Location: ../index.php');
+    
+    if (isset($logout)) {
+        unset($logout);
+        header('Location: ../../');
+    } else {
+        header('Location: ../');        
+    }
 } 

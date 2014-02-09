@@ -3,15 +3,17 @@
             <div id="footer" class="columns large-12">
                 &copy 2014 <a href="http://balsamade.com/dine">Dine</a>  
                 <?php //if(isset($_SESSION['user'])){ ?>
-                | <a href="edit/menu.php" title="Edit this page">Edit</a>
+                | <a href="edit/" title="Edit this page">Edit</a>
                 <?php //} ?>
             </div>
             
         </div>  
     </div>  
     <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/instantclick.min.js" data-no-instant></script>       
     <script src="js/scripts.js"></script>       
     <script src="js/plugins.js" defer></script>
+    <script data-no-instant>InstantClick.init();</script>
 
     <?php if($site_options->analytics_code != '') { ?>
     <script>

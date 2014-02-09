@@ -9,13 +9,13 @@
                         <div class="clearfix">
                             <label for="username">Username</label>
                             <div class="input">
-                                <input type="text" name="username" id="username">
+                                <input type="text" name="username" id="username" value="admin">
                             </div>
                         </div>
                         <div class="clearfix">
                             <label for="password">Password</label>
                             <div class="input">
-                                <input type="password" name="password" id="password">
+                                <input type="password" name="password" id="password" value="admin">
                             </div>
                         </div>
                         <div>
@@ -26,11 +26,10 @@
                 </form>    
             </div>    
         </div>    
-
+        <span id="viewtoggle"></span>
         
-        <script src="../js/vendor/jquery.min.js"></script>
-        <script src="../js/editor/plugins.js"></script>
-        <script src="../js/editor/editor.js"></script>    
+        <script src="../js/vendor/jquery.min.js"></script>       
+        <script src="../js/editor/editor.js"></script>     
     </body>
 </html>
 

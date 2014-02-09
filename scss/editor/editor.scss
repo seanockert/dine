@@ -300,6 +300,11 @@ tr.slip-reordering {
   
   a {
     color: $color-mute;
+    font-size: $font-size-small;
+    
+    &.right {
+      padding-top: $base-padding;
+    }
   }
 }
 

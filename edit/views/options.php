@@ -30,22 +30,10 @@
   
   <body id="edit">
 
-    <div id="sidebar"> 
-      <h2><a class="brand" href="../" title="Return to site"><?php echo $title->content; ?></a></h2>
-      <nav>
-        <a href="#" id="menu-icon">
-          <div></div><div></div><div></div>
-        </a>
-                
-        <ul>
-            <li><a href="./">Content</a></li>  
-            <li><a href="./menus.php">Menus</a></li>   
-            <li><a href="./photos.php">Photos</a></li>   
-            <li><a href="./options.php" class="active">Options</a></li>   
-            <li><a href="controllers/login.php?action=logout" class="logout">Log Out</a></li>   
-        </ul>
-      </nav>   
-    </div> 
+    <?php 
+      $active = 'options';
+      include('partials/nav.php'); 
+    ?>
 
     <div id="content">
         

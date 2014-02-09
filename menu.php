@@ -34,11 +34,11 @@
   <div class="hero menu-hero clearfix">
     <div class="row">
         <div class="columns large-9">
-          <h1><a href="./" title="Return to homepage"><?php echo $site_options->name; ?></a></h1>  
+          <h1><a href="./" title="Return to homepage" data-instant><?php echo $site_options->name; ?></a></h1>  
         </div>      
         
         <div class="columns large-3">
-          <a href="./" class="menu">Return Home</a> 
+          <a href="./" class="menu" data-instant>Return Home</a> 
         </div>    
                        
         <div class="clear"></div>

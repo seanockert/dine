@@ -3,7 +3,7 @@
   <div class="hero clearfix">
     <div class="row">
         <div class="columns large-12">
-          <h1><a href="./" title="Return to homepage"><?php echo $site_options->name; ?></a></h1>  
+          <h1><a href="./" title="Return to homepage" data-instant><?php echo $site_options->name; ?></a></h1>  
         </div> 
 
         <div class="columns large-4 small-6 hours">
@@ -19,7 +19,7 @@
         </div> 
         
         <div class="columns large-3">
-          <a href="menu.php" class="menu">Dining Menu</a> 
+          <a href="menu.php" class="menu" data-instant>Dining Menu</a> 
         </div>           
         
        

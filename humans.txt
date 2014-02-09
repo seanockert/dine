@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Sean Ockert -- Author -- @seanockert
+
+# THANKS
+
+    Zurb Foundation 5 
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Foundation grid, Fastclick, Reveal.js, Slip.js
