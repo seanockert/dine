@@ -9,11 +9,14 @@
             
         </div>  
     </div>  
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/instantclick.min.js" data-no-instant></script>       
-    <script src="js/scripts.js"></script>       
+    <script src="js/vendor/instantclick.min.js" data-no-instant></script>         
     <script src="js/plugins.js" defer></script>
     <script data-no-instant>InstantClick.init();</script>
+    <script>
+        window.addEventListener('load', function() {
+            FastClick.attach(document.body);
+        }, false);      
+    </script>
 
     <?php if($site_options->analytics_code != '') { ?>
     <script>
