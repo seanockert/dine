@@ -606,8 +606,9 @@ label {
   #sidebar h2 {
     padding: 0;
     margin: 0;
-    float: left; }
-    /* line 14, ../../scss/editor/_sidebar.scss */
+    float: none;
+    clear: both; }
+    /* line 15, ../../scss/editor/_sidebar.scss */
     #sidebar h2 a {
       color: #f7f7f7;
       text-decoration: none;
@@ -616,17 +617,19 @@ label {
       -moz-transition: background-color 0.15s ease-in;
       -webkit-transition: background-color 0.15s ease-in;
       transition: background-color 0.2s ease-in; }
-      /* line 23, ../../scss/editor/_sidebar.scss */
+      /* line 24, ../../scss/editor/_sidebar.scss */
       #sidebar h2 a:hover {
         background: #a236b9; }
 
-/* line 30, ../../scss/editor/_sidebar.scss */
+/* line 31, ../../scss/editor/_sidebar.scss */
 #sidebar {
   width: 100%;
-  height: 46px; }
+  /*height: 46px;*/
+  height: auto;
+  clear: both; }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 39, ../../scss/editor/_sidebar.scss */
+  /* line 42, ../../scss/editor/_sidebar.scss */
   #sidebar {
     height: 100%;
     width: 220px;
@@ -634,121 +637,201 @@ label {
     top: 0;
     left: 0;
     overflow: auto; }
-    /* line 47, ../../scss/editor/_sidebar.scss */
+    /* line 50, ../../scss/editor/_sidebar.scss */
     #sidebar h2 {
       width: auto;
       float: none; }
-      /* line 51, ../../scss/editor/_sidebar.scss */
+      /* line 54, ../../scss/editor/_sidebar.scss */
       #sidebar h2 a {
         padding: 30px 12px;
         margin-top: 20px; } }
-/* line 1, ../../scss/editor/_menu.scss */
-#menu-icon {
-  display: inline-block;
-  color: #fff;
-  float: right;
-  margin-right: 10px;
-  padding: 14px 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 40px; }
-  /* line 11, ../../scss/editor/_menu.scss */
-  #menu-icon div {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 2px 2px 2px 2px;
-    height: 2px;
-    margin-top: 3px;
-    width: 100%; }
-
-/* line 21, ../../scss/editor/_menu.scss */
-nav ul, nav:active ul {
-  display: none;
-  position: absolute;
-  z-index: 1001;
-  padding: 0;
-  background: #5d1f6a;
-  right: 0px;
-  top: 35px;
-  margin: 0;
-  width: 50%; }
-  /* line 33, ../../scss/editor/_menu.scss */
-  nav ul li, nav:active ul li {
-    text-align: center;
-    width: 100%;
+/* Responsive-nav.js 1.0.25 by @viljamis. Animation by Bennett Feely http://sarasoueidan.com/blog/navicon-transformicons */
+/* line 3, ../../scss/editor/_menu.scss */
+.nav-collapse {
+  max-height: inherit !important;
+  width: 100%; }
+  /* line 7, ../../scss/editor/_menu.scss */
+  .nav-collapse ul {
+    margin: 0;
     padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none; }
+  /* line 15, ../../scss/editor/_menu.scss */
+  .nav-collapse li {
+    width: 100%;
+    display: block;
     margin: 0; }
-    /* line 39, ../../scss/editor/_menu.scss */
-    nav ul li a, nav:active ul li a {
+    /* line 20, ../../scss/editor/_menu.scss */
+    .nav-collapse li a {
+      color: #fff;
       text-decoration: none;
       display: block;
-      float: left;
-      width: 100%;
-      color: #fff;
-      padding: 14px 20px;
-      -moz-transition: background-color 0.15s ease-in;
-      -webkit-transition: background-color 0.15s ease-in;
-      transition: background-color 0.2s ease-in; }
-      /* line 50, ../../scss/editor/_menu.scss */
-      nav ul li a:hover, nav ul li a:active, nav:active ul li a:hover, nav:active ul li a:active {
-        background: #4c1956; }
-      /* line 54, ../../scss/editor/_menu.scss */
-      nav ul li a.active, nav:active ul li a.active {
-        background: #3a1343; }
-      /* line 58, ../../scss/editor/_menu.scss */
-      nav ul li a.logout, nav:active ul li a.logout {
-        background: #840c0c;
-        margin-top: 0; }
-        /* line 62, ../../scss/editor/_menu.scss */
-        nav ul li a.logout:hover, nav:active ul li a.logout:hover {
-          background: #e21414; }
+      padding: 12px; }
+      /* line 26, ../../scss/editor/_menu.scss */
+      .nav-collapse li a:hover, .nav-collapse li a:focus, .nav-collapse li a:active {
+        background-color: #3a1343;
+        color: #fff; }
+      /* line 31, ../../scss/editor/_menu.scss */
+      .nav-collapse li a.active {
+        background-color: #802b91; }
+      /* line 35, ../../scss/editor/_menu.scss */
+      .nav-collapse li a.logout {
+        margin-top: 12px;
+        background-color: #290e2f; }
+    /* line 41, ../../scss/editor/_menu.scss */
+    .nav-collapse li.tel {
+      display: none; }
+  /* line 46, ../../scss/editor/_menu.scss */
+  .nav-collapse.opened {
+    max-height: 9999px !important; }
+  /* line 50, ../../scss/editor/_menu.scss */
+  .nav-collapse.disable-pointer-events {
+    pointer-events: none !important; }
 
-/* line 71, ../../scss/editor/_menu.scss */
-nav:hover ul, nav:active ul {
+/* line 55, ../../scss/editor/_menu.scss */
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
   display: block;
-  background: #6e257e; }
+  overflow: hidden;
+  zoom: 1; }
 
-@media only screen and (min-width: 40.063em) {
-  /* line 78, ../../scss/editor/_menu.scss */
-  #menu-icon {
+/* line 64, ../../scss/editor/_menu.scss */
+.columns.nav-collapse {
+  padding: 0; }
+
+/* line 81, ../../scss/editor/_menu.scss */
+.nav-menu {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  outline: none;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  padding-left: 30px; }
+  /* line 95, ../../scss/editor/_menu.scss */
+  .nav-menu:after, .nav-menu:before {
     display: none; }
 
-  /* line 82, ../../scss/editor/_menu.scss */
-  nav ul, nav:active ul {
-    position: relative;
-    top: auto;
-    right: auto;
-    display: block;
-    padding: 0;
-    margin: 0;
-    width: 100%; }
-    /* line 91, ../../scss/editor/_menu.scss */
-    nav ul li, nav:active ul li {
-      float: none;
-      width: 100%; }
-      /* line 96, ../../scss/editor/_menu.scss */
-      nav ul li a, nav:active ul li a {
-        float: none;
-        padding: 20px 12px;
-        text-align: left;
-        color: #fff; }
-        /* line 102, ../../scss/editor/_menu.scss */
-        nav ul li a:hover, nav:active ul li a:hover {
-          color: #fff;
-          background: #4c1956; }
-        /* line 107, ../../scss/editor/_menu.scss */
-        nav ul li a.active, nav:active ul li a.active {
-          color: #5d1f6a;
-          background: #f7f7f7;
-          font-weight: bold; }
-        /* line 113, ../../scss/editor/_menu.scss */
-        nav ul li a.logout, nav:active ul li a.logout {
-          background: #3a1343;
-          margin-top: 40px; }
+/* line 101, ../../scss/editor/_menu.scss */
+.lines {
+  display: inline-block;
+  width: 2rem;
+  height: 0.28571rem;
+  background: #fff;
+  border-radius: 0.14286rem;
+  transition: 0.2s;
+  position: relative; }
+  /* line 105, ../../scss/editor/_menu.scss */
+  .lines:before, .lines:after {
+    display: inline-block;
+    width: 2rem;
+    height: 0.28571rem;
+    background: #fff;
+    border-radius: 0.14286rem;
+    transition: 0.2s;
+    position: absolute;
+    left: 0;
+    content: '';
+    transform-origin: 0.14286rem center; }
+  /* line 113, ../../scss/editor/_menu.scss */
+  .lines:before {
+    top: 0.5rem; }
+  /* line 114, ../../scss/editor/_menu.scss */
+  .lines:after {
+    top: -0.5rem; }
 
-  /* line 121, ../../scss/editor/_menu.scss */
-  nav:hover ul, nav:active ul {
-    background: transparent; } }
+/* line 117, ../../scss/editor/_menu.scss */
+.nav-menu.x.close .lines {
+  background: transparent; }
+  /* line 120, ../../scss/editor/_menu.scss */
+  .nav-menu.x.close .lines:before, .nav-menu.x.close .lines:after {
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    top: 0;
+    width: 2rem;
+    height: 0.44444rem; }
+  /* line 127, ../../scss/editor/_menu.scss */
+  .nav-menu.x.close .lines:before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg) scale(0.8);
+    -ms-transform: rotate3d(0, 0, 1, 45deg) scale(0.8);
+    -moz-transform: rotate3d(0, 0, 1, 45deg) scale(0.8);
+    transform: rotate3d(0, 0, 1, 45deg) scale(0.8); }
+  /* line 130, ../../scss/editor/_menu.scss */
+  .nav-menu.x.close .lines:after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) scale(0.8);
+    -ms-transform: rotate3d(0, 0, 1, -45deg) scale(0.8);
+    -moz-transform: rotate3d(0, 0, 1, -45deg) scale(0.8);
+    transform: rotate3d(0, 0, 1, -45deg) scale(0.8); }
+
+@media only screen and (min-width: 40.063em) {
+  /* line 139, ../../scss/editor/_menu.scss */
+  .js .nav-collapse {
+    position: relative; }
+    /* line 142, ../../scss/editor/_menu.scss */
+    .js .nav-collapse.closed {
+      max-height: none; }
+
+  /* line 147, ../../scss/editor/_menu.scss */
+  .nav-menu, .nav-toggle {
+    display: none; }
+
+  /* line 152, ../../scss/editor/_menu.scss */
+  .nav-collapse {
+    display: block; }
+    /* line 154, ../../scss/editor/_menu.scss */
+    .nav-collapse ul {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: block;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background: none;
+      text-align: right; }
+    /* line 166, ../../scss/editor/_menu.scss */
+    .nav-collapse li {
+      float: none;
+      display: inline;
+      margin: 0; }
+      /* line 171, ../../scss/editor/_menu.scss */
+      .nav-collapse li a {
+        float: none;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        padding: 18px; }
+        /* line 178, ../../scss/editor/_menu.scss */
+        .nav-collapse li a:hover, .nav-collapse li a:focus, .nav-collapse li a:active {
+          background-color: #3a1343; }
+        /* line 182, ../../scss/editor/_menu.scss */
+        .nav-collapse li a.active {
+          background: #f7f7f7;
+          color: #5d1f6a; }
+        /* line 187, ../../scss/editor/_menu.scss */
+        .nav-collapse li a.logout {
+          background-color: #290e2f;
+          margin-top: 24px; }
+      /* line 194, ../../scss/editor/_menu.scss */
+      .nav-collapse li.tel {
+        display: inline; }
+        /* line 197, ../../scss/editor/_menu.scss */
+        .nav-collapse li.tel a {
+          padding-right: 0.9375rem;
+          padding-right: 0.9375em; } }
 /* line 18, ../../scss/editor/_buttons.scss */
 ul {
   list-style: none;
@@ -1103,13 +1186,25 @@ tr.slip-reordering {
   display: block;
   margin: 0;
   cursor: pointer;
-  color: #999999; }
-  /* line 356, ../../scss/editor/editor.scss */
+  color: #999999;
+  width: 100%; }
+  /* line 357, ../../scss/editor/editor.scss */
+  #days-list li:after {
+    content: '\2713';
+    color: #f7f7f7;
+    float: right;
+    line-height: 1;
+    margin-left: 6px; }
+  /* line 365, ../../scss/editor/editor.scss */
   #days-list li.active, #days-list li.selected {
     background: #333333;
     color: #fff; }
+    /* line 369, ../../scss/editor/editor.scss */
+    #days-list li.active:after, #days-list li.selected:after {
+      content: '\2713';
+      color: #77e427; }
 
-/* line 364, ../../scss/editor/editor.scss */
+/* line 379, ../../scss/editor/editor.scss */
 .categories li {
   float: none;
   padding: 0;
@@ -1117,23 +1212,27 @@ tr.slip-reordering {
   margin: 0; }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 374, ../../scss/editor/editor.scss */
+  /* line 389, ../../scss/editor/editor.scss */
   html {
     border-top: 20px solid #5d1f6a; }
 
-  /* line 378, ../../scss/editor/editor.scss */
+  /* line 393, ../../scss/editor/editor.scss */
   #content {
     padding-left: 240px;
     overflow: auto; }
 
-  /* line 383, ../../scss/editor/editor.scss */
+  /* line 398, ../../scss/editor/editor.scss */
   .column-3 {
     width: 33.33333%; }
 
-  /* line 388, ../../scss/editor/editor.scss */
+  /* line 403, ../../scss/editor/editor.scss */
   #login form {
     width: 400px; }
 
-  /* line 393, ../../scss/editor/editor.scss */
+  /* line 409, ../../scss/editor/editor.scss */
+  #days-list li {
+    width: auto; }
+
+  /* line 414, ../../scss/editor/editor.scss */
   #footer {
     padding-left: 240px; } }

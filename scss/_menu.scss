@@ -1,12 +1,11 @@
 /*! Responsive-nav.js 1.0.25 by @viljamis. Animation by Bennett Feely http://sarasoueidan.com/blog/navicon-transformicons */
 
 .nav-collapse {
-  max-height:inherit !important;
-  width: 100%;
   
   ul {
     margin: 0;
     padding: 0;
+    padding-top: 10px;
     width: 100%;
     display: block;
     list-style: none;
@@ -15,27 +14,12 @@
   li {
     width: 100%;
     display: block;
-    margin: 0;
     
     a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      padding: $base-padding;
-      
       &:hover, &:focus, &:active {
-          background-color: darken($color-purple, 10%);
+          background-color: $color-dark;
           color: #fff; 
-      } 
-      
-      &.active {
-        background-color: lighten($color-purple, 10%);
-      }         
-      
-      &.logout {
-        margin-top: $base-padding;
-        background-color: darken($color-purple, 15%);
-      }         
+      }    
     }  
     
     &.tel {
@@ -44,7 +28,7 @@
   }
   
   &.opened {
-    max-height: 9999px !important;    
+    max-height: 9999px;    
   }
   
   &.disable-pointer-events {
@@ -73,7 +57,7 @@ $transition: .2s; // increase this to see the transformations in slow-motion
   display: inline-block;
   width: $button-size;
   height: $button-size/7;
-  background: #fff;
+  background: $color-dark;
   border-radius: $button-size/14; 
   transition: $transition;
 } 
@@ -83,18 +67,12 @@ $transition: .2s; // increase this to see the transformations in slow-motion
   -webkit-touch-callout: none;
   @include vendor-prefix(user-select, none);
   outline: none;  
-  border: none !important; 
-  background: transparent !important;
-  box-shadow: none !important;
+  border: none;
+  background: transparent;
   position: absolute;
   top: 0;
   right: 0;
   padding: 16px; 
-  padding-left: 30px; 
-  
-  &:after, &:before {
-    display: none;
-  }
     
 }
 
@@ -121,14 +99,13 @@ $transition: .2s; // increase this to see the transformations in slow-motion
       @include vendor-prefix(transform-origin, 50% 50%);
       top:0;
       width: $button-size;
-      height: $button-size/4.5;
     }
 
     &:before{
-      @include vendor-prefix(transform, rotate3d(0,0,1,45deg) scale(0.8)); 
+      @include vendor-prefix(transform, rotate3d(0,0,1,45deg)); 
     }
     &:after{
-      @include vendor-prefix(transform, rotate3d(0,0,1,-45deg) scale(0.8)); 
+      @include vendor-prefix(transform, rotate3d(0,0,1,-45deg)); 
     }
 } 
 
@@ -156,7 +133,8 @@ $transition: .2s; // increase this to see the transformations in slow-motion
       top: auto;
       right: auto;
       display: block;
-      padding: 0;
+      padding: $base-padding 0;
+      padding-top: $base-padding*1.5;
       margin: 0; 
       width: 100%; 
       background: none;
@@ -166,28 +144,18 @@ $transition: .2s; // increase this to see the transformations in slow-motion
     li {
     float: none;    
     display: inline;
-    margin: 0;
     
       a {
         float: none;
         display: inline-block;
-        width: 100%;
-        text-align: left;
-        padding: $base-padding*1.5;
+        width: auto;
+        color: $color-dark;
+        padding: $base-padding $base-padding;
         
         &:hover, &:focus, &:active {
-          background-color: darken($color-purple,10%);
-        }  
-        
-        &.active {
-          background: $color-off-white;
-          color: $color-purple;
-        }
-        
-        &.logout {
-          background-color: darken($color-purple,15%);
-          margin-top: $base-padding*2;          
-        }         
+          background-color: transparent;
+          color: $color-dark;
+        }           
       
       }
      

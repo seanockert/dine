@@ -352,11 +352,26 @@ tr.slip-reordering {
     margin: 0;
     cursor: pointer;
     color: $color-mute;
+    width: 100%;
+ 
+    &:after {
+      content: '\2713';
+      color: $color-off-white;
+      float: right;
+      line-height: 1;
+      margin-left: $base-padding/2;
+    } 
     
     &.active, &.selected {
       background: $color-dark;
       color: #fff;
+             
+      &:after {
+        content: '\2713';
+        color: $color-green;
+      }
     }
+
   }
 }
 
@@ -388,7 +403,13 @@ tr.slip-reordering {
     form {
       width: 400px;
     } 
-  }   
+  } 
+  
+  #days-list {
+    li {
+      width: auto;
+    }
+  }  
 
   #footer {
     padding-left: 240px;  
