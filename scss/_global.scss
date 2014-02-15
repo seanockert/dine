@@ -178,9 +178,15 @@ nav ul {
 
 /* Content  ---------------------- */
 
-#content {
-  line-height: 1.5;
+.content {
   margin-bottom: $base-padding*2;
+  
+  h2 {
+    font-size: $font-size-large;
+    margin: 0;
+    padding: 0;
+    color: $color-purple;
+  }
 }
 
 #menu {

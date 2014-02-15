@@ -76,6 +76,7 @@
         <hr>
         <div class="tools">
           <h3>Tools</h3>
+          <p>If you've updated some content but it's not showing up on the site, click this button to clear the cached files.</p>
           <form method="post" class="left" action="controllers/options.php">
             <input type="hidden" name="action" value="flushcache">
             <p><br><input type="submit" name="submit" class="button blue" value="Flush Cache" /></p>

@@ -36,11 +36,12 @@
 	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
 	
 	.reveal-modal .close-reveal-modal {
-		font-size: 22px;
+		font-size: 24px;
 		line-height: .5;
 		position: absolute;
-		top: 8px;
-		right: 11px;
+		top: 0;
+		right: 0;
+		padding: 12px;
 		color: #aaa;
 		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
 		font-weight: bold;

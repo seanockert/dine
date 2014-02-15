@@ -33,7 +33,7 @@
           foreach($contents as $content) { ?>
               <div class="columns large-6">
               <h3><?php echo $content->title; ?></h3>
-              <p><?php echo nl2br($content->content); ?></p> 
+              <p><?php echo $content->content; ?></p> 
               </div> 
           <?php } ?>          
         <?php } ?>

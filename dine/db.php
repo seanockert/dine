@@ -17,16 +17,14 @@ class database {
     'email',
     'hours',
     'days',
-    'analytics_code',
-    //'username',
-    //'password'
+    'analytics_code'
   ];
   
   public function setup() {
       $db = new PDO("sqlite:$this->db_path");
       
       //create a table in the database
-      $db->exec("CREATE TABLE contents (id INTEGER PRIMARY KEY, title TEXT, content TEXT, position TEXT, date_modified TEXT, date_created TEXT)");
+      $db->exec("CREATE TABLE contents (id INTEGER PRIMARY KEY, title TEXT, content TEXT, markdown TEXT, position TEXT, date_modified TEXT, date_created TEXT)");
       $db->exec("CREATE TABLE categories (id INTEGER PRIMARY KEY, title TEXT, category_order INTEGER, date_modified TEXT, date_created TEXT)");
       $db->exec("CREATE TABLE items (id INTEGER PRIMARY KEY, title TEXT, description TEXT, price TEXT, category TEXT, item_order INTEGER, date_modified TEXT, date_created TEXT)");
       $db->exec("CREATE TABLE subitems (id INTEGER PRIMARY KEY, parent_id INTEGER, title TEXT, price TEXT, item_order INTEGER, date_modified TEXT, date_created TEXT)");
@@ -117,7 +115,6 @@ class database {
       
       // Return an object
       $data = $this->array_to_object($rows);
-    
       return $data;  
             
     } catch (PDOException $e) {

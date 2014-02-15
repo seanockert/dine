@@ -319,6 +319,14 @@ tr.slip-reordering {
   float: right;
 }
 
+.grey {
+  color: #666;
+  font-weight: 400;
+  display: inline-block;
+  margin-left: $base-padding;
+  font-family: sans-serif;
+}
+
 .reveal-modal {
   form {
     margin: 0 !important;
@@ -383,6 +391,7 @@ tr.slip-reordering {
     margin: 0;
   }
 }
+
   
 @media #{$medium-up} {
 
@@ -417,4 +426,52 @@ tr.slip-reordering {
 
 
 }  
+
+
+
+
+/* Markdown Formatting */
+.preview {
+  min-height: 80px;
+  width: 80%;
+  display: none;
+  border: 1px dashed #ccc;
+  background: #fffcd6;
+  padding: $base-padding;
+  
+  ul {
+    display: block;
+    clear: both;
+    margin-bottom: $base-padding;
+  } 
+      
+  li {
+    display: block;
+    float: none;
+    margin: $base-padding/2 0;
+    list-style: disc inside !important;
+    
+    &:before {
+      content: '\2022';
+      padding-right: 6px;
+    }
+  }
+}
+
+#markdown-tips {
+  strong {
+    font-weight: $normal;
+    color: darken($color-green,20%);
+    
+    &.regular {
+      font-weight: $bold;
+      color: $color-dark;
+    }
+  }
+  
+  h2, h3 {
+    display: inline; 
+    margin: 0;
+  }
+}
 

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('../../dine/db.php');
+require('../../dine/Parsedown.php');
 
 $action = $_POST['action'];
 
@@ -13,11 +14,14 @@ if ($_SESSION['user'] == true) {
     {
       $title = $_POST['title'];
       $content = SQLite3::escapeString(trim($_POST['content']));
+      $markdown = $content;
+      $content = Parsedown::instance()->set_breaks_enabled(true)->parse($content);
       $position = $_POST['position'];
       
       $data = array(
           'title' => $title,
           'content' => $content,
+          'markdown' => $markdown,
           'position' => $position
       );
     
@@ -31,11 +35,17 @@ if ($_SESSION['user'] == true) {
       $id = $_POST['id'];
       $title = $_POST['title'];
       $content = SQLite3::escapeString(trim($_POST['content']));
+      
+      $markdown = $content;
+      $content = Parsedown::instance()->set_breaks_enabled(false)->parse($content);
+      
       $position = $_POST['position'];
+
       
       $data = array(
           'title' => $title,
           'content' => $content,
+          'markdown' => $markdown,
           'position' => $position
       );
     
