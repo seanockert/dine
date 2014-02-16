@@ -91,12 +91,13 @@ class helper {
         
         // Loop through array and add formatting: a comma after each and an & before the last one     
         foreach ($dates as $niceDate) {
-            if ($len == $i) {
+            if ($len > 1 && $len == $i) {
               $output .= ' &amp; ' . $niceDate;      
             } else if (($len-1) == $i) {
                $output .= $niceDate;  
             } else {
-               $output .= $niceDate . ', ';  
+               $output .= $niceDate;  
+               if ($len > 1) { $output .=  ', '; }
             }
             ++$i;
         }
