@@ -63,7 +63,7 @@
             }
           ?></h3>
           Contact us by phone: <?php echo $site_options->phone; ?> 
-          <br>or email: <a href="mailto:<?php echo $site_options->email; ?>"><?php echo $site_options->email; ?></a>
+          <br>or email: <a href="mailto:<?php echo $helper->safeEmail($site_options->email); ?>"><?php echo $helper->safeEmail($site_options->email); ?></a>
         </div>
     </div>  
   </div>  

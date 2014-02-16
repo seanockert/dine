@@ -167,6 +167,18 @@ class helper {
       $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
       return $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     }
+    
+    // Hide the email address from spam bots
+    // http://www.givegoodweb.com/post/67/php-email-obfuscate
+    function safeEmail($email) {
+        $obfuscatedEmail = '';
+        //$email = eregi_replace('#','', $email);
+        $length = strlen($email);
+        for ($i = 0; $i < $length; $i++)
+            $obfuscatedEmail .= "&#" . ord($email[$i]);  // creates ASCII HTML entity
+        $return = ''.$obfuscatedEmail.'';
+        return $return;
+    }    
 
 }
 
