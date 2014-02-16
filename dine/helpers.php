@@ -26,45 +26,83 @@ class helper {
     }
 
     // Input list of days open
-    // Output: nicely formatted open days
-    function format_days($days) {
-        $current_days = explode(',', $days);
-        $days = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
-        $i = 0;
-        $output = '';
-        $separator = ' - ';
-        $count = 0;
+    // Output: a formatted string of open days
+    function format_days($daysString) {
+        $days = explode(',', $daysString);
+        $weekdays = array('Mon','Tues','Wed','Thurs','Fri','Sat','Sun');
+        $separator = '-';
+        $i = $activeCount = 0;
         
-        foreach ($current_days as $day) {
+        foreach ($days as $day) {
 
-            if ($current_days[$i] == 1) { 
-                // Start count on number of active days 
-                $count = $count + 1; 
-
-                if ($i > 0 && $i < 6) {
-                    if ($current_days[$i-1] == 1 && $current_days[$i+1] == 1) {
+            if ($day == 1) { 
+ 
+                if ($i > 0 && $i < 7 && $activeCount) { // Is not the first or last day of the week
+                    if ($days[$i-1] == 1 && $days[$i+1] == 1) { // If previous and next days are open
                         $output .= $separator;
                         $separator = '';
                     } else {
                         if ($separator != '') {
                             $output .= ', ';
                         }
-                        $output .= $days[$i];
+                        $output .= $weekdays[$i];
                         $separator = ' - '; 
                     }
                     
                      
                  } else {
                    // Last day so output normally
-                   $output .= $days[$i];
-                 }           
-              
+                   $output .= $weekdays[$i];
+                 }  
+                          
+                // Start count on number of active days 
+                ++$activeCount; 
             } 
       
             ++$i;
         }
+        
         return $output;
     }
+
+    // Input: A comma separated list of days in dd/mm format eg 25/12,01/01
+    // Output: A string of days with their common holiday names (if they exist)
+    function format_closed_days($daysString) {
+        $dates = explode(',', $daysString);    
+        $output = '';
+        
+        // A list of common holidays to compare to
+        $common_holidays = array(
+            '25/12' => 'Christmas Day',
+            '31/12' => 'New Years Eve',
+            '01/01' => 'New Years Day',
+            '20/04' => 'Easter Sunday'
+        );
+        
+        // If the date is a common holiday then replace with the holiday name
+        foreach ($dates as $key => $date) {
+            if (array_key_exists($date, $common_holidays)) {
+                $dates[$key] = $common_holidays[$date];
+            }
+        }        
+ 
+        $len = count($dates);
+        $i = 1;
+        
+        // Loop through array and add formatting: a comma after each and an & before the last one     
+        foreach ($dates as $niceDate) {
+            if ($len == $i) {
+              $output .= ' &amp; ' . $niceDate;      
+            } else if (($len-1) == $i) {
+               $output .= $niceDate;  
+            } else {
+               $output .= $niceDate . ', ';  
+            }
+            ++$i;
+        }
+  
+        return $output;
+    }    
 
 
     // Input: the page to cache and the length of time to cache for

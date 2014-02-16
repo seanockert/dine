@@ -17,6 +17,7 @@ class database {
     'email',
     'hours',
     'days',
+    'days_closed',
     'analytics_code'
   ];
   

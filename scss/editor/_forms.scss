@@ -14,6 +14,12 @@ form {
     margin-bottom: 6px;
   }
   
+  em {
+    font-size: $font-size-small;
+    color: $color-mid;
+    font-weight: $normal;
+  }
+  
 }
 
 fieldset {

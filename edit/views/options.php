@@ -49,9 +49,10 @@
           <div class="option">
                <?php if ($option->type == 'username') { ?>
               <br><hr>
-              <?php } ?>  
-              <label><?php echo ucfirst(str_replace('_', ' ', $option->type)); ?></label>
+              <?php } ?> 
               
+              <label><?php echo ucfirst(str_replace('_', ' ', $option->type)); ?></label>
+
               <?php if ($option->type == 'address') { ?>
                 <textarea name="content[]" class="short" placeholder=""><?php echo $option->content; ?></textarea>
               <?php } else if ($option->type == 'hours') { ?>
@@ -61,6 +62,10 @@
                 <input type="hidden" name="content[]" id="days-input" value="<?php echo $option->content; ?>">
               <?php } else { ?>
                 <input type="text" name="content[]" value="<?php echo $option->content; ?>">
+              <?php } ?>
+              
+              <?php if ($option->type == 'days_closed') { ?> 
+                <em>In dd/mm format eg. 25/12,01/01 = Christmas Day and New Years Day</em>
               <?php } ?>
           </div>
         <?php }

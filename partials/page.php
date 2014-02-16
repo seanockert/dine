@@ -10,6 +10,10 @@
           <h3>Open Hours</h3>
           <?php echo nl2br($site_options->hours); ?><br>
           <?php echo $helper->format_days($site_options->days); ?>
+          <small><?php if ($site_options->days_closed != '') { 
+            echo '<br>Closed for ';
+            echo $helper->format_closed_days($site_options->days_closed); 
+          } ?></small>
         </div>          
         
         <div class="columns large-5 small-6 location">
