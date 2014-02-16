@@ -1473,7 +1473,7 @@ ul li, ol li {
 /* Header  ---------------------- */
 /* line 64, ../scss/_global.scss */
 h3 {
-  font-size: 20px;
+  font-size: 26px;
   margin-bottom: 6px; }
 
 /* line 69, ../scss/_global.scss */
@@ -1601,13 +1601,22 @@ nav ul {
   #menu .description {
     margin-top: 0; }
 
-/* line 206, ../scss/_global.scss */
+/* line 204, ../scss/_global.scss */
+.content img {
+  text-align: center;
+  margin-bottom: 12px; }
+
+/* line 209, ../scss/_global.scss */
+.contact h3 {
+  font-size: 20px; }
+
+/* line 213, ../scss/_global.scss */
 footer, #footer {
   padding-top: 24px;
   padding-bottom: 24px;
   margin-top: 24px;
   border-top: 1px solid #dddddd; }
-  /* line 212, ../scss/_global.scss */
+  /* line 219, ../scss/_global.scss */
   footer ul, #footer ul {
     list-style-type: none;
     padding: 0;
@@ -1620,13 +1629,19 @@ footer, #footer {
 /* Mobile and up media queries  ---------------------- */
 /* Tablet and up media queries  ---------------------- */
 @media only screen and (min-width: 40.063em) {
-  /* line 229, ../scss/_global.scss */
+  /* line 236, ../scss/_global.scss */
   .hero {
     padding: 120px 0;
     font-size: 20px; }
-    /* line 234, ../scss/_global.scss */
+    /* line 241, ../scss/_global.scss */
     .hero.menu-hero {
-      padding: 24px 0; } }
+      padding: 24px 0; }
+
+  /* line 246, ../scss/_global.scss */
+  .content img {
+    float: right;
+    margin-top: -30px;
+    padding-left: 20px; } }
 /* Desktop and up media queries  ---------------------- */
 /* Responsive-nav.js 1.0.25 by @viljamis. Animation by Bennett Feely http://sarasoueidan.com/blog/navicon-transformicons */
 /* line 5, ../scss/_menu.scss */

@@ -30,7 +30,7 @@ class helper {
     function format_days($daysString) {
         $days = explode(',', $daysString);
         $weekdays = array('Mon','Tues','Wed','Thurs','Fri','Sat','Sun');
-        $separator = '-';
+        $separator = ' - ';
         $i = $activeCount = 0;
         
         foreach ($days as $day) {
@@ -74,6 +74,7 @@ class helper {
         // A list of common holidays to compare to
         $common_holidays = array(
             '25/12' => 'Christmas Day',
+            '26/12' => 'Boxing Day',
             '31/12' => 'New Years Eve',
             '01/01' => 'New Years Day',
             '20/04' => 'Easter Sunday'
@@ -174,10 +175,18 @@ class helper {
         $obfuscatedEmail = '';
         //$email = eregi_replace('#','', $email);
         $length = strlen($email);
-        for ($i = 0; $i < $length; $i++)
+        for ($i = 0; $i < $length; $i++) {
             $obfuscatedEmail .= "&#" . ord($email[$i]);  // creates ASCII HTML entity
+        }
         $return = ''.$obfuscatedEmail.'';
         return $return;
+    }
+    
+    // SQLite escapes apostrophes so replace these
+    // Input: Content with double ''
+    // Output: Content without double ''
+    function cleanContent($content) {
+        return str_replace("''", "'", $content);
     }    
 
 }

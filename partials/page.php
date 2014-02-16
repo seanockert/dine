@@ -11,8 +11,7 @@
           <?php echo nl2br($site_options->hours); ?><br>
           <?php echo $helper->format_days($site_options->days); ?>
           <small><?php if ($site_options->days_closed != '') { 
-            echo '<br>Closed for ';
-            echo $helper->format_closed_days($site_options->days_closed); 
+            echo '<br>Closed ' . $helper->format_closed_days($site_options->days_closed); 
           } ?></small>
         </div>          
         
@@ -35,26 +34,26 @@
       <div class="content">
         <?php if (count($contents) > 0) {  
           foreach($contents as $content) { ?>
-              <div class="columns large-6">
+              <div class="columns large-12">
               <h3><?php echo $content->title; ?></h3>
-              <p><?php echo $content->content; ?></p> 
+              <p><?php echo $helper->cleanContent($content->content); ?></p> 
               </div> 
           <?php } ?>          
         <?php } ?>
         
         
-        <?php if (count($images) > 0) {  
+        <?php /* if (count($images) > 0) {  
           foreach($images as $image) { ?>
           <div class="image columns large-6">
               <img src="images/uploads/<?php echo $image->src; ?>" title="<?php echo $image->title; ?>">
           </div>    
           <?php } ?>          
-        <?php } ?> 
+        <?php }  */ ?> 
        
         <div class="clear"></div>
         <br>
         
-        <div class="columns large-4 large-centered medium-centered">
+        <div class="columns large-4 large-centered medium-centered contact">
           <h3><?php
             if ($helper->is_open($site_options->days)) {
                 echo 'Yes, we\'re open today.';

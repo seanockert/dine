@@ -8,7 +8,7 @@ class database {
   public $db_name = 'dine.sqlite';
   public $db_path = DBPATH;
   
-  // Set up options
+  // Set up option table
   public $options = [
     'name',
     'description',
@@ -21,6 +21,8 @@ class database {
     'analytics_code'
   ];
   
+  // Creates a new SQLite database with the appropriate tables and prefills the Options table
+  // Called automatically if the dine.sqlite table is deleted
   public function setup() {
       $db = new PDO("sqlite:$this->db_path");
       
@@ -56,6 +58,11 @@ class database {
       $_SESSION['alertType'] = "alert success active";    
     
   }  
+  
+  // Add a new row to a table in the database
+  // Reference the table and send the data as an associated array
+  // Example usage: $DB->create('content', array());
+  // Sets a session variable for success or fail
   public function create($table, $data, $success = null) {
  
     // Created timestamp
@@ -103,6 +110,9 @@ class database {
     
   }
 
+  // Return the content from a specified table in the database 
+  // Example usage: $DB->read('content', 'order');
+  // Returns an object
   public function read($table, $order = 'id') {
     
     try {
@@ -125,7 +135,10 @@ class database {
     }
     
   }  
-  
+ 
+  // Returns the content from a single row in a specified table in the database 
+  // Example usage: $DB->read('content', column_name, row_id);
+  // Returns an object 
   public function readSingle($table, $col, $id) {
     try {
       
@@ -148,30 +161,9 @@ class database {
     } 
   }  
   
-  // Input: the table name and ID of the page
-  // Output: the page data
-  // TODO: this function is currently unused
-  public function readPage($table, $id) {
-    try {
-      
-      $db = new PDO("sqlite:$this->db_path");
-      $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-      
-      $row = $db->query('SELECT * FROM ' . $table . ' WHERE id=' . $id);
-      $row->setFetchMode(PDO::FETCH_ASSOC);
-      $db = NULL;
-      
-      return $row;  
-            
-    } catch (PDOException $e) {
-      $this->setup();
-      //return 'Connection failed: ' . $e->getMessage();
-      
-    } 
-  }
-
-  // Input: table name, an array of data to update, the row ID, custom success message
-  // Output: update the row data in the specified table
+  // Updates a row in a specified table in the database
+  // Example usage: $DB->create('content', array(), row_id);
+  // Sets a session variable for success or fail
   public function update($table, $data, $id, $success = null) {
     
     // Created timestamp
@@ -265,7 +257,7 @@ class database {
   }
   
   // Input: an array from the database
-  // Output: an object
+  // Output: an object of the input array
   public function array_to_object($array) {
     $obj = new stdClass;
     foreach($array as $k => $v) {

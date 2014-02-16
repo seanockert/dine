@@ -9,13 +9,14 @@ if ($_SESSION['user'] == true) {
   try
   {   
 
-    //Save the contents to database
+    // Add a new content section to the database
     if($action == 'add')
     {
       $title = $_POST['title'];
-      $content = SQLite3::escapeString(trim($_POST['content']));
+      $content = trim($_POST['content']); 
       $markdown = $content;
-      $content = Parsedown::instance()->set_breaks_enabled(true)->parse($content);
+      $content = Parsedown::instance()->set_breaks_enabled(false)->parse(SQLite3::escapeString($content));
+  
       $position = $_POST['position'];
       
       $data = array(
@@ -29,18 +30,18 @@ if ($_SESSION['user'] == true) {
 
     }
    
-    //Code to save the data to database
+    // Update a content section
     else if($action == 'update')
     {
       $id = $_POST['id'];
       $title = $_POST['title'];
-      $content = SQLite3::escapeString(trim($_POST['content']));
-      
+      $content = trim($_POST['content']);
       $markdown = $content;
-      $content = Parsedown::instance()->set_breaks_enabled(false)->parse($content);
+      // Convert Markdown to HTML
+      $content = Parsedown::instance()->set_breaks_enabled(false)->parse(SQLite3::escapeString($content)); 
       
+      // Position not used yet
       $position = $_POST['position'];
-
       
       $data = array(
           'title' => $title,
@@ -53,9 +54,7 @@ if ($_SESSION['user'] == true) {
 
     } 
     
-    /*
-      Delete by ID
-    */
+    // Delete a content section by ID
     else if($action == 'delete')
     {
       $query = $DB->delete('contents', $_POST['id']);
@@ -71,5 +70,6 @@ if ($_SESSION['user'] == true) {
   }
   
 } else {
+  // Redirect to login page if not logged in
 	header('Location: ../login.php');
 }   

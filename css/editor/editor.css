@@ -531,7 +531,7 @@ label {
 a.preview-button {
   position: absolute;
   right: 20%;
-  top: 65px;
+  top: 35px;
   background: #ddd;
   color: #999999;
   display: block;

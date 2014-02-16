@@ -62,7 +62,7 @@ ul, ol {
 }
 
 h3 {
-  font-size: $font-size-large;
+  font-size: $font-size-xlarge;
   margin-bottom: $base-padding/2;
 }
 
@@ -201,7 +201,14 @@ nav ul {
   }
 }
 
+.content img {
+  text-align: center;
+  margin-bottom: $base-padding;
+}
 
+.contact h3 {
+  font-size: $font-size-large;
+}
 
 footer, #footer {
   padding-top: $base-padding*2;
@@ -235,7 +242,13 @@ footer, #footer {
       padding: $base-padding*2 0;
     }
   }
-   
+  
+  .content img {
+    float: right;
+    margin-top: -30px;
+    padding-left: 20px;
+  }
+     
 } 
 
 /* Desktop and up media queries  ---------------------- */

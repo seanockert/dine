@@ -1,7 +1,7 @@
         <div class="row">    
             
             <div id="footer" class="columns large-12">
-                &copy 2014 <a href="http://balsamade.com/dine">Dine</a>  
+                &copy 2014 Dine by <a href="http://balsamade.com">Sean Ockert</a>
                 <?php //if(isset($_SESSION['user'])){ ?>
                 | <a href="edit/" title="Edit this page">Edit</a>
                 <?php //} ?>

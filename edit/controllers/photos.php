@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../../dine/config.php');
+require('../../dine/settings.php');
 require('../../dine/db.php');
 
 $action = $_POST['action'];
