@@ -53,13 +53,6 @@ ul, ol {
 
 /* Header  ---------------------- */
 
-#header {
-
-}
-
-#logo {
-  
-}
 
 h3 {
   font-size: $font-size-xlarge;
@@ -206,6 +199,10 @@ nav ul {
   margin-bottom: $base-padding;
 }
 
+.demo img {
+  max-width: 80% !important;
+}
+
 .contact h3 {
   font-size: $font-size-large;
 }
@@ -247,6 +244,10 @@ footer, #footer {
     float: right;
     margin-top: -30px;
     padding-left: 20px;
+  }
+  
+  .demo img {
+    max-width: 100% !important;
   }
      
 } 

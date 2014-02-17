@@ -1471,16 +1471,16 @@ ul li, ol li {
   margin-bottom: 6px; }
 
 /* Header  ---------------------- */
-/* line 64, ../scss/_global.scss */
+/* line 57, ../scss/_global.scss */
 h3 {
   font-size: 26px;
   margin-bottom: 6px; }
 
-/* line 69, ../scss/_global.scss */
+/* line 62, ../scss/_global.scss */
 p {
   margin-top: 0; }
 
-/* line 74, ../scss/_global.scss */
+/* line 67, ../scss/_global.scss */
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -1493,59 +1493,59 @@ nav ul {
     /* line 101, ../scss/_functions.scss */
     nav ul > li:last-child {
       margin-right: 0px; }
-  /* line 77, ../scss/_global.scss */
+  /* line 70, ../scss/_global.scss */
   nav ul li a {
     display: block;
     padding: 12px;
     text-decoration: none;
     color: #444444; }
-    /* line 83, ../scss/_global.scss */
+    /* line 76, ../scss/_global.scss */
     nav ul li a:hover {
       background: #dddddd;
       text-decoration: none; }
-    /* line 88, ../scss/_global.scss */
+    /* line 81, ../scss/_global.scss */
     nav ul li a:active {
       background: #333333;
       color: #fff; }
-    /* line 93, ../scss/_global.scss */
+    /* line 86, ../scss/_global.scss */
     nav ul li a.active {
       font-weight: 700; }
 
 /* Reusable Layouts  ---------------------- */
-/* line 102, ../scss/_global.scss */
+/* line 95, ../scss/_global.scss */
 .box {
   padding: 12px;
   background: #fff; }
 
 /* Hero Banner  ---------------------- */
-/* line 110, ../scss/_global.scss */
+/* line 103, ../scss/_global.scss */
 .hero {
   background: #5d1f6a url("../images/macaroons.jpg") no-repeat top center;
   background-size: cover;
   color: #fff;
   padding: 12px 0; }
-  /* line 116, ../scss/_global.scss */
+  /* line 109, ../scss/_global.scss */
   .hero a {
     text-decoration: none; }
-  /* line 120, ../scss/_global.scss */
+  /* line 113, ../scss/_global.scss */
   .hero h1 {
     margin: 0;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 24px; }
-    /* line 126, ../scss/_global.scss */
+    /* line 119, ../scss/_global.scss */
     .hero h1 a:hover {
       text-decoration: none; }
-  /* line 131, ../scss/_global.scss */
+  /* line 124, ../scss/_global.scss */
   .hero h3 {
     margin: 0;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase; }
-  /* line 138, ../scss/_global.scss */
+  /* line 131, ../scss/_global.scss */
   .hero a {
     color: #fff; }
-  /* line 142, ../scss/_global.scss */
+  /* line 135, ../scss/_global.scss */
   .hero .menu {
     display: block;
     padding: 12px;
@@ -1556,36 +1556,36 @@ nav ul {
     text-transform: uppercase;
     text-shadow: none;
     margin-top: 24px; }
-    /* line 153, ../scss/_global.scss */
+    /* line 146, ../scss/_global.scss */
     .hero .menu:hover {
       background: #fff;
       color: #493e3c;
       text-decoration: none; }
-  /* line 161, ../scss/_global.scss */
+  /* line 154, ../scss/_global.scss */
   .hero.menu-hero h1 {
     text-align: left;
     margin-bottom: 0; }
-  /* line 166, ../scss/_global.scss */
+  /* line 159, ../scss/_global.scss */
   .hero.menu-hero .menu {
     margin-top: 0; }
 
-/* line 173, ../scss/_global.scss */
+/* line 166, ../scss/_global.scss */
 .location a {
   font-size: 14px;
   text-decoration: underline; }
 
 /* Content  ---------------------- */
-/* line 181, ../scss/_global.scss */
+/* line 174, ../scss/_global.scss */
 .content {
   margin-bottom: 24px; }
-  /* line 184, ../scss/_global.scss */
+  /* line 177, ../scss/_global.scss */
   .content h2 {
     font-size: 20px;
     margin: 0;
     padding: 0;
     color: #5d1f6a; }
 
-/* line 192, ../scss/_global.scss */
+/* line 185, ../scss/_global.scss */
 #menu {
   list-style-type: none;
   padding: 0;
@@ -1594,29 +1594,33 @@ nav ul {
   /* line 112, ../scss/_functions.scss */
   #menu > li {
     display: block; }
-  /* line 195, ../scss/_global.scss */
+  /* line 188, ../scss/_global.scss */
   #menu h3 {
     margin-bottom: 0; }
-  /* line 199, ../scss/_global.scss */
+  /* line 192, ../scss/_global.scss */
   #menu .description {
     margin-top: 0; }
 
-/* line 204, ../scss/_global.scss */
+/* line 197, ../scss/_global.scss */
 .content img {
   text-align: center;
   margin-bottom: 12px; }
 
-/* line 209, ../scss/_global.scss */
+/* line 202, ../scss/_global.scss */
+.demo img {
+  max-width: 80% !important; }
+
+/* line 206, ../scss/_global.scss */
 .contact h3 {
   font-size: 20px; }
 
-/* line 213, ../scss/_global.scss */
+/* line 210, ../scss/_global.scss */
 footer, #footer {
   padding-top: 24px;
   padding-bottom: 24px;
   margin-top: 24px;
   border-top: 1px solid #dddddd; }
-  /* line 219, ../scss/_global.scss */
+  /* line 216, ../scss/_global.scss */
   footer ul, #footer ul {
     list-style-type: none;
     padding: 0;
@@ -1629,19 +1633,23 @@ footer, #footer {
 /* Mobile and up media queries  ---------------------- */
 /* Tablet and up media queries  ---------------------- */
 @media only screen and (min-width: 40.063em) {
-  /* line 236, ../scss/_global.scss */
+  /* line 233, ../scss/_global.scss */
   .hero {
     padding: 120px 0;
     font-size: 20px; }
-    /* line 241, ../scss/_global.scss */
+    /* line 238, ../scss/_global.scss */
     .hero.menu-hero {
       padding: 24px 0; }
 
-  /* line 246, ../scss/_global.scss */
+  /* line 243, ../scss/_global.scss */
   .content img {
     float: right;
     margin-top: -30px;
-    padding-left: 20px; } }
+    padding-left: 20px; }
+
+  /* line 249, ../scss/_global.scss */
+  .demo img {
+    max-width: 100% !important; } }
 /* Desktop and up media queries  ---------------------- */
 /* Responsive-nav.js 1.0.25 by @viljamis. Animation by Bennett Feely http://sarasoueidan.com/blog/navicon-transformicons */
 /* line 5, ../scss/_menu.scss */

@@ -3,6 +3,7 @@
 .nav-collapse {
   max-height:inherit !important;
   width: 100%;
+  @include vendor-prefix(transition, height 0.2s ease-in-out);
   
   ul {
     margin: 0;
@@ -67,15 +68,14 @@
 
  
 $button-size : 2rem; 
-$transition: .2s; // increase this to see the transformations in slow-motion
- 
+
 @mixin line {
   display: inline-block;
   width: $button-size;
   height: $button-size/7;
   background: #fff;
   border-radius: $button-size/14; 
-  transition: $transition;
+  @include vendor-prefix(transition, all 0.1s ease-in-out);
 } 
 
 .nav-menu {
@@ -106,7 +106,7 @@ $transition: .2s; // increase this to see the transformations in slow-motion
    
    @include line;
     position: absolute;
-    left:0;
+    left: 0;
     content: '';
     transform-origin: $button-size/14 center;
   }
@@ -114,7 +114,7 @@ $transition: .2s; // increase this to see the transformations in slow-motion
   &:after { top: -$button-size/4; }
 }
 
-.nav-menu.x.close .lines{
+.nav-menu.x.close .lines {
     background: transparent;
 
     &:before, &:after{
@@ -189,16 +189,7 @@ $transition: .2s; // increase this to see the transformations in slow-motion
           margin-top: $base-padding*2;          
         }         
       
-      }
-     
-      &.tel {
-        display: inline;
-        
-        a {
-          padding-right: 0.9375rem;
-          padding-right: 0.9375em;
-        }
-      }   
+      } 
           
     }
   }

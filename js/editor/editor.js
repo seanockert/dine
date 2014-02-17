@@ -201,15 +201,15 @@ new Slip(sortableList);
       var $textarea = $(this).parents('form').find('textarea');
       var $preview = $textarea.next('div');
 
-      if($button.text() == 'Preview') {
+      if($button.html() == 'Preview') {
         $preview.html(mdconverter.makeHtml($textarea.val()));
         $textarea.hide();
         $preview.show();
-        $button.text('Edit');  
+        $button.html('&larr; Edit').addClass('active');  
       } else {
         $preview.hide();
         $textarea.show();
-        $button.html('Preview');
+        $button.html('Preview').removeClass('active');
       }
     });      
   }  

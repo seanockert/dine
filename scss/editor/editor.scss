@@ -272,17 +272,20 @@ tr.slip-reordering {
   font-size: 24px;
   text-align: center;
   color: #999;
-}
+  
+  &:hover {
+    color: #333;
+  }
 
-.move-handle:hover {
-  color: #333;
-}
-
-.move-handle:after {
-    content: " \2261";   
+  &:after {
+      content: " \2261";   
+  }
 }
 
 /* End Sortable List */
+
+
+/* Footer */
 
 #footer {
   text-align: left;
@@ -308,23 +311,25 @@ tr.slip-reordering {
   }
 }
 
+/* End Footer */
+
 
 /* Helper Classes */
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
+.left { float: left; }
+.right { float: right; }
 
 .grey {
   color: #666;
-  font-weight: 400;
+  font-weight: 300;
   display: inline-block;
   margin-left: $base-padding;
   font-family: sans-serif;
+}
+
+#content .grey {
+  margin-left: 0;
+  font-size: $font-size-small;
 }
 
 .reveal-modal {
@@ -343,6 +348,10 @@ tr.slip-reordering {
   padding-right: $base-padding*2;
 }
 
+/* End Helper Classes */
+
+
+/* Columns for photos */
 .column-3 {
   width: 100%;
   float: left;
@@ -352,6 +361,7 @@ tr.slip-reordering {
   }
 }
 
+/* List of open days in Options.php */
 
 #days-list {
   li {
@@ -383,6 +393,11 @@ tr.slip-reordering {
   }
 }
 
+/* End List of open days */
+
+
+/* Menu Categories */
+
 .categories {
   li {
     float: none;
@@ -392,52 +407,18 @@ tr.slip-reordering {
   }
 }
 
-  
-@media #{$medium-up} {
-
-  html {
-    border-top: 20px solid $color-purple;
-  }
-
-  #content {
-    padding-left: 240px; 
-    overflow: auto;
-  }
-
-  .column-3 {
-    width: 33.33333%;
-  }
-
-  #login {
-    form {
-      width: 400px;
-    } 
-  } 
-  
-  #days-list {
-    li {
-      width: auto;
-    }
-  }  
-
-  #footer {
-    padding-left: 240px;  
-  }
-
-
-}  
-
-
-
 
 /* Markdown Formatting */
+
 .preview {
   min-height: 80px;
-  width: 80%;
+  width: 100%;
   display: none;
-  border: 1px dashed #ccc;
-  background: #fffcd6;
+  border: 1px solid darken($color-light-yellow, 30%);
+  background: $color-light-yellow;
   padding: $base-padding;
+  font-family: $base-font-family;
+  line-height: 1.4;
   
   ul {
     display: block;
@@ -474,4 +455,52 @@ tr.slip-reordering {
     margin: 0;
   }
 }
+/* End Markdown Formatting */
+
+  
+@media #{$medium-up} {
+
+  html {
+    border-top: 20px solid $color-purple;
+  }
+
+  #content {
+    padding-left: 240px; 
+    overflow: auto;
+  }
+
+  .column-3 {
+    width: 33.33333%;
+  }
+
+  #login {
+    form {
+      width: 400px;
+    } 
+  } 
+  
+  #days-list {
+    li {
+      width: auto;
+    }
+  } 
+  
+
+
+  #footer {
+    padding-left: 240px;  
+  }
+
+
+}  
+
+@media #{$large-up} {
+  .preview {
+    width: 80%;
+  }   
+}  
+
+
+
+
 

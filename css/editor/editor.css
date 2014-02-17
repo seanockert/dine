@@ -509,41 +509,47 @@ label {
   margin-top: -62px;
   margin-left: 130px; }
 
-@media only screen and (min-width: 40.063em) {
-  /* line 200, ../../scss/editor/_forms.scss */
-  textarea {
-    width: 80%; }
+/* line 199, ../../scss/editor/_forms.scss */
+a.preview-button {
+  position: absolute;
+  right: 0;
+  top: 65px;
+  background: #333333;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  display: block;
+  padding: 6px;
+  text-decoration: none;
+  width: 70px;
+  text-align: center;
+  opacity: 0.3; }
+  /* line 214, ../../scss/editor/_forms.scss */
+  a.preview-button:hover, a.preview-button:active, a.preview-button.active {
+    opacity: 1; }
 
-  /* line 204, ../../scss/editor/_forms.scss */
+@media only screen and (min-width: 40.063em) {
+  /* line 225, ../../scss/editor/_forms.scss */
   .alert, .short {
     width: 300px; }
 
-  /* line 208, ../../scss/editor/_forms.scss */
+  /* line 229, ../../scss/editor/_forms.scss */
   .alert {
     left: 50%;
     top: 0;
     margin-left: -150px; }
 
-  /* line 215, ../../scss/editor/_forms.scss */
+  /* line 236, ../../scss/editor/_forms.scss */
   form input[type='text'] {
     width: 300px; } }
-/* line 222, ../../scss/editor/_forms.scss */
-a.preview-button {
-  position: absolute;
-  right: 20%;
-  top: 35px;
-  background: #ddd;
-  color: #999999;
-  display: block;
-  padding: 6px;
-  text-decoration: none;
-  width: 70px;
-  text-align: center; }
-  /* line 234, ../../scss/editor/_forms.scss */
-  a.preview-button:hover, a.preview-button:active {
-    background: #333333;
-    color: #fff; }
+@media only screen and (min-width: 64.063em) {
+  /* line 243, ../../scss/editor/_forms.scss */
+  a.preview-button {
+    right: 20%; }
 
+  /* line 248, ../../scss/editor/_forms.scss */
+  textarea {
+    width: 80%; } }
 /*	--------------------------------------------------
 	Reveal Modals
 	-------------------------------------------------- */
@@ -673,47 +679,51 @@ a.preview-button {
 /* line 3, ../../scss/editor/_menu.scss */
 .nav-collapse {
   max-height: inherit !important;
-  width: 100%; }
-  /* line 7, ../../scss/editor/_menu.scss */
+  width: 100%;
+  -webkit-transition: height 0.2s ease-in-out;
+  -ms-transition: height 0.2s ease-in-out;
+  -moz-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out; }
+  /* line 8, ../../scss/editor/_menu.scss */
   .nav-collapse ul {
     margin: 0;
     padding: 0;
     width: 100%;
     display: block;
     list-style: none; }
-  /* line 15, ../../scss/editor/_menu.scss */
+  /* line 16, ../../scss/editor/_menu.scss */
   .nav-collapse li {
     width: 100%;
     display: block;
     margin: 0; }
-    /* line 20, ../../scss/editor/_menu.scss */
+    /* line 21, ../../scss/editor/_menu.scss */
     .nav-collapse li a {
       color: #fff;
       text-decoration: none;
       display: block;
       padding: 12px; }
-      /* line 26, ../../scss/editor/_menu.scss */
+      /* line 27, ../../scss/editor/_menu.scss */
       .nav-collapse li a:hover, .nav-collapse li a:focus, .nav-collapse li a:active {
         background-color: #3a1343;
         color: #fff; }
-      /* line 31, ../../scss/editor/_menu.scss */
+      /* line 32, ../../scss/editor/_menu.scss */
       .nav-collapse li a.active {
         background-color: #802b91; }
-      /* line 35, ../../scss/editor/_menu.scss */
+      /* line 36, ../../scss/editor/_menu.scss */
       .nav-collapse li a.logout {
         margin-top: 12px;
         background-color: #290e2f; }
-    /* line 41, ../../scss/editor/_menu.scss */
+    /* line 42, ../../scss/editor/_menu.scss */
     .nav-collapse li.tel {
       display: none; }
-  /* line 46, ../../scss/editor/_menu.scss */
+  /* line 47, ../../scss/editor/_menu.scss */
   .nav-collapse.opened {
     max-height: 9999px !important; }
-  /* line 50, ../../scss/editor/_menu.scss */
+  /* line 51, ../../scss/editor/_menu.scss */
   .nav-collapse.disable-pointer-events {
     pointer-events: none !important; }
 
-/* line 55, ../../scss/editor/_menu.scss */
+/* line 56, ../../scss/editor/_menu.scss */
 .js .nav-collapse {
   clip: rect(0 0 0 0);
   max-height: 0;
@@ -722,7 +732,7 @@ a.preview-button {
   overflow: hidden;
   zoom: 1; }
 
-/* line 64, ../../scss/editor/_menu.scss */
+/* line 65, ../../scss/editor/_menu.scss */
 .columns.nav-collapse {
   padding: 0; }
 
@@ -754,7 +764,10 @@ a.preview-button {
   height: 0.28571rem;
   background: #fff;
   border-radius: 0.14286rem;
-  transition: 0.2s;
+  -webkit-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   position: relative; }
   /* line 105, ../../scss/editor/_menu.scss */
   .lines:before, .lines:after {
@@ -763,7 +776,10 @@ a.preview-button {
     height: 0.28571rem;
     background: #fff;
     border-radius: 0.14286rem;
-    transition: 0.2s;
+    -webkit-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
     position: absolute;
     left: 0;
     content: '';
@@ -848,14 +864,7 @@ a.preview-button {
         /* line 187, ../../scss/editor/_menu.scss */
         .nav-collapse li a.logout {
           background-color: #290e2f;
-          margin-top: 24px; }
-      /* line 194, ../../scss/editor/_menu.scss */
-      .nav-collapse li.tel {
-        display: inline; }
-        /* line 197, ../../scss/editor/_menu.scss */
-        .nav-collapse li.tel a {
-          padding-right: 0.9375rem;
-          padding-right: 0.9375em; } }
+          margin-top: 24px; } }
 /* line 18, ../../scss/editor/_buttons.scss */
 ul {
   list-style: none;
@@ -1142,17 +1151,16 @@ tr.slip-reordering {
   font-size: 24px;
   text-align: center;
   color: #999; }
-
-/* line 277, ../../scss/editor/editor.scss */
-.move-handle:hover {
-  color: #333; }
-
-/* line 281, ../../scss/editor/editor.scss */
-.move-handle:after {
-  content: " \2261"; }
+  /* line 276, ../../scss/editor/editor.scss */
+  .move-handle:hover {
+    color: #333; }
+  /* line 280, ../../scss/editor/editor.scss */
+  .move-handle:after {
+    content: " \2261"; }
 
 /* End Sortable List */
-/* line 287, ../../scss/editor/editor.scss */
+/* Footer */
+/* line 290, ../../scss/editor/editor.scss */
 #footer {
   text-align: left;
   padding-left: 20px;
@@ -1160,59 +1168,68 @@ tr.slip-reordering {
   padding-top: 40px;
   line-height: 150%;
   color: #999999; }
-  /* line 295, ../../scss/editor/editor.scss */
+  /* line 298, ../../scss/editor/editor.scss */
   #footer .logo {
     display: inline-block;
     width: 80px;
     height: auto; }
-  /* line 301, ../../scss/editor/editor.scss */
+  /* line 304, ../../scss/editor/editor.scss */
   #footer a {
     color: #999999;
     font-size: 14px; }
-    /* line 305, ../../scss/editor/editor.scss */
+    /* line 308, ../../scss/editor/editor.scss */
     #footer a.right {
       padding-top: 12px; }
 
+/* End Footer */
 /* Helper Classes */
-/* line 314, ../../scss/editor/editor.scss */
+/* line 319, ../../scss/editor/editor.scss */
 .left {
   float: left; }
 
-/* line 318, ../../scss/editor/editor.scss */
+/* line 320, ../../scss/editor/editor.scss */
 .right {
   float: right; }
 
 /* line 322, ../../scss/editor/editor.scss */
 .grey {
   color: #666;
-  font-weight: 400;
+  font-weight: 300;
   display: inline-block;
   margin-left: 12px;
   font-family: sans-serif; }
 
-/* line 331, ../../scss/editor/editor.scss */
+/* line 330, ../../scss/editor/editor.scss */
+#content .grey {
+  margin-left: 0;
+  font-size: 14px; }
+
+/* line 336, ../../scss/editor/editor.scss */
 .reveal-modal form {
   margin: 0 !important; }
 
-/* line 336, ../../scss/editor/editor.scss */
+/* line 341, ../../scss/editor/editor.scss */
 .nolist {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-/* line 342, ../../scss/editor/editor.scss */
+/* line 347, ../../scss/editor/editor.scss */
 .img {
   padding-right: 24px; }
 
-/* line 346, ../../scss/editor/editor.scss */
+/* End Helper Classes */
+/* Columns for photos */
+/* line 355, ../../scss/editor/editor.scss */
 .column-3 {
   width: 100%;
   float: left; }
-  /* line 350, ../../scss/editor/editor.scss */
+  /* line 359, ../../scss/editor/editor.scss */
   .column-3 img {
     max-width: 100%; }
 
-/* line 357, ../../scss/editor/editor.scss */
+/* List of open days in Options.php */
+/* line 367, ../../scss/editor/editor.scss */
 #days-list li {
   padding: 10px;
   display: block;
@@ -1220,88 +1237,98 @@ tr.slip-reordering {
   cursor: pointer;
   color: #999999;
   width: 100%; }
-  /* line 365, ../../scss/editor/editor.scss */
+  /* line 375, ../../scss/editor/editor.scss */
   #days-list li:after {
     content: '\2713';
     color: #f7f7f7;
     float: right;
     line-height: 1;
     margin-left: 6px; }
-  /* line 373, ../../scss/editor/editor.scss */
+  /* line 383, ../../scss/editor/editor.scss */
   #days-list li.active, #days-list li.selected {
     background: #333333;
     color: #fff; }
-    /* line 377, ../../scss/editor/editor.scss */
+    /* line 387, ../../scss/editor/editor.scss */
     #days-list li.active:after, #days-list li.selected:after {
       content: '\2713';
       color: #77e427; }
 
-/* line 387, ../../scss/editor/editor.scss */
+/* End List of open days */
+/* Menu Categories */
+/* line 402, ../../scss/editor/editor.scss */
 .categories li {
   float: none;
   padding: 0;
   padding-bottom: 6px;
   margin: 0; }
 
-@media only screen and (min-width: 40.063em) {
-  /* line 398, ../../scss/editor/editor.scss */
-  html {
-    border-top: 20px solid #5d1f6a; }
-
-  /* line 402, ../../scss/editor/editor.scss */
-  #content {
-    padding-left: 240px;
-    overflow: auto; }
-
-  /* line 407, ../../scss/editor/editor.scss */
-  .column-3 {
-    width: 33.33333%; }
-
-  /* line 412, ../../scss/editor/editor.scss */
-  #login form {
-    width: 400px; }
-
-  /* line 418, ../../scss/editor/editor.scss */
-  #days-list li {
-    width: auto; }
-
-  /* line 423, ../../scss/editor/editor.scss */
-  #footer {
-    padding-left: 240px; } }
 /* Markdown Formatting */
-/* line 434, ../../scss/editor/editor.scss */
+/* line 413, ../../scss/editor/editor.scss */
 .preview {
   min-height: 80px;
-  width: 80%;
+  width: 100%;
   display: none;
-  border: 1px dashed #ccc;
+  border: 1px solid #fff13d;
   background: #fffcd6;
-  padding: 12px; }
-  /* line 442, ../../scss/editor/editor.scss */
+  padding: 12px;
+  font-family: sans-serif;
+  line-height: 1.4; }
+  /* line 423, ../../scss/editor/editor.scss */
   .preview ul {
     display: block;
     clear: both;
     margin-bottom: 12px; }
-  /* line 448, ../../scss/editor/editor.scss */
+  /* line 429, ../../scss/editor/editor.scss */
   .preview li {
     display: block;
     float: none;
     margin: 6px 0;
     list-style: disc inside !important; }
-    /* line 454, ../../scss/editor/editor.scss */
+    /* line 435, ../../scss/editor/editor.scss */
     .preview li:before {
       content: '\2022';
       padding-right: 6px; }
 
-/* line 462, ../../scss/editor/editor.scss */
+/* line 443, ../../scss/editor/editor.scss */
 #markdown-tips strong {
   font-weight: 300;
   color: #499312; }
-  /* line 466, ../../scss/editor/editor.scss */
+  /* line 447, ../../scss/editor/editor.scss */
   #markdown-tips strong.regular {
     font-weight: 700;
     color: #333333; }
-/* line 472, ../../scss/editor/editor.scss */
+/* line 453, ../../scss/editor/editor.scss */
 #markdown-tips h2, #markdown-tips h3 {
   display: inline;
   margin: 0; }
+
+/* End Markdown Formatting */
+@media only screen and (min-width: 40.063em) {
+  /* line 463, ../../scss/editor/editor.scss */
+  html {
+    border-top: 20px solid #5d1f6a; }
+
+  /* line 467, ../../scss/editor/editor.scss */
+  #content {
+    padding-left: 240px;
+    overflow: auto; }
+
+  /* line 472, ../../scss/editor/editor.scss */
+  .column-3 {
+    width: 33.33333%; }
+
+  /* line 477, ../../scss/editor/editor.scss */
+  #login form {
+    width: 400px; }
+
+  /* line 483, ../../scss/editor/editor.scss */
+  #days-list li {
+    width: auto; }
+
+  /* line 490, ../../scss/editor/editor.scss */
+  #footer {
+    padding-left: 240px; } }
+@media only screen and (min-width: 64.063em) {
+  /* line 498, ../../scss/editor/editor.scss */
+  .preview {
+    width: 80%; } }

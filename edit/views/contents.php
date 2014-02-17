@@ -26,7 +26,7 @@
           foreach($contents as $row) { ?>      
           <div class="content">
             <form method="post" action="controllers/contents.php">
-              <h4><input type="text" name="title" value="<?php echo $row->title; ?>" placeholder="Give this section a name"> <a href="#" class="grey preview-button">Preview</a></h4>
+              <h4><input type="text" name="title" value="<?php echo $row->title; ?>" placeholder="Give this section a name"> <a href="#" class="preview-button">Preview</a></h4>
               <textarea name="content" id="editor" placeholder="Add content here..."><?php echo $row->markdown; ?></textarea>
               <div class="preview"></div>
               <input type="hidden" name="id" value="<?php echo $row->id; ?>">
@@ -39,13 +39,13 @@
               <input type="hidden" name="action" value="delete" >
               <input type="submit" name="submit" value="Delete" class="delete">
             </form>
+            <em class="grey">Last modified: <?php echo date('g:ia, D jS \of M Y',$row->date_modified); ?></em>
             <hr>
           </div>
         <?php } ?>          
         <?php } else {
           echo '<tr><td colspan="7"><em>No content yet.</em> <a href="#" data-reveal-id="add-content" class="button green">Add some content</a></td></tr>';
         } ?>
-        <hr>
         <p><br><a href="#" data-reveal-id="add-content" class="button green">Add Content Section</a></p>
         <br> 
 

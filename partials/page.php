@@ -31,7 +31,7 @@
   </div>
   
   <div class="row">
-      <div class="content">
+      <div class="content demo">
         <?php if (count($contents) > 0) {  
           foreach($contents as $content) { ?>
               <div class="columns large-12">
