@@ -25,17 +25,17 @@
       padding: $base-padding;
       
       &:hover, &:focus, &:active {
-          background-color: darken($color-purple, 10%);
+          background-color: darken($color-red, 10%);
           color: #fff; 
       } 
       
       &.active {
-        background-color: lighten($color-purple, 10%);
+        background-color: lighten($color-red, 10%);
       }         
       
       &.logout {
         margin-top: $base-padding;
-        background-color: darken($color-purple, 15%);
+        background-color: darken($color-red, 15%);
       }         
     }  
     
@@ -176,16 +176,16 @@ $button-size : 2rem;
         padding: $base-padding*1.5;
         
         &:hover, &:focus, &:active {
-          background-color: darken($color-purple,10%);
+          background-color: darken($color-red,10%);
         }  
         
         &.active {
           background: $color-off-white;
-          color: $color-purple;
+          color: $color-red;
         }
         
         &.logout {
-          background-color: darken($color-purple,15%);
+          background-color: darken($color-red,15%);
           margin-top: $base-padding*2;          
         }         
       

@@ -6,7 +6,6 @@
       <nav class="nav-collapse">
         <!--<a href="#" id="menu-icon"><div></div><div></div><div></div></a>-->
 
-
             <ul>
             <?php
                 $navitems = array();

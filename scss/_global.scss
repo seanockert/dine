@@ -4,12 +4,13 @@
 
 body {
   background: $color-off-white url('../images/bg-dirt.png');
-  color: $color-dark-brown;
+  color: $color-base-font;
   padding: 0;
   margin: 0;
+  font-size: $font-size-normal;
   font-family: $base-font-family;
   font-weight: $normal;
-  line-height: 1.5;
+  line-height: 1.45;
   position: relative;
 }
 
@@ -31,16 +32,26 @@ body {
 
 a {
   color: $color-blue;
-  text-decoration: underline;
+  text-decoration: none;
   
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: darken($color-blue, 10%);
   }
 }
 
 a:focus { outline: none; }
 
+
+.content {
+  a {  
+    border-bottom: 1px solid $color-blue;
+  
+    &:hover {
+      border-bottom: 1px solid darken($color-blue, 10%);
+    }
+  }
+}
 
 /* Lists  ---------------------- */
 
@@ -50,6 +61,13 @@ ul, ol {
   }
 }
 
+
+/* Headers  ---------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  line-height: 1.25;
+}
 
 /* Header  ---------------------- */
 
@@ -101,7 +119,7 @@ nav ul {
 /* Hero Banner  ---------------------- */
 
 .hero { 
-  background: $color-purple url('../images/macaroons.jpg') no-repeat top center;
+  background: $color-red url(../images/header-bg.jpg) no-repeat top center;
   background-size: cover;
   color: #fff;
   padding: $base-padding 0;
@@ -113,7 +131,6 @@ nav ul {
   h1 {
     margin: 0;
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: $base-padding*2;
     
     a:hover {
@@ -125,7 +142,6 @@ nav ul {
     margin: 0;
     font-size: $font-size-small;
     font-weight: $normal;
-    text-transform: uppercase;
   }
   
   a {
@@ -139,9 +155,10 @@ nav ul {
     border: 2px solid #fff;
     color: #fff;
     background: rgba(0,0,0,0.1);
-    text-transform: uppercase;
     text-shadow: none;
     margin-top: $base-padding*2;
+    font-family: $header-font-family;
+    text-transform: uppercase;
 
     &:hover {
       background: #fff;
@@ -178,7 +195,7 @@ nav ul {
     font-size: $font-size-large;
     margin: 0;
     padding: 0;
-    color: $color-purple;
+    color: $color-red;
   }
 }
 
@@ -203,8 +220,12 @@ nav ul {
   max-width: 80% !important;
 }
 
-.contact h3 {
-  font-size: $font-size-large;
+.contact {
+  text-align: center;
+  
+  h3 {
+    font-size: $font-size-large;
+  }
 }
 
 footer, #footer {
@@ -212,6 +233,8 @@ footer, #footer {
   padding-bottom: $base-padding*2;
   margin-top: $base-padding*2; 
   border-top: 1px solid $color-light-grey;
+  font-family: $header-font-family;
+  font-size: $font-size-small;
 
   ul {
     @include blank-list;

@@ -19,14 +19,15 @@ License:
 
 html {
   background: $color-off-white;
+  color: #222;
   
   &#login {
-    background: $color-purple;
+    background: $color-red;
   }
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: $base-font-family;
 }
 
 
@@ -53,7 +54,7 @@ h3 {
 #login {
   
   body {
-    background: $color-purple;    
+    background: $color-red;    
   }
 
   
@@ -461,7 +462,7 @@ tr.slip-reordering {
 @media #{$medium-up} {
 
   html {
-    border-top: 20px solid $color-purple;
+    border-top: 20px solid $color-red;
   }
 
   #content {

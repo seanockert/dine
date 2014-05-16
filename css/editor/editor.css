@@ -431,7 +431,7 @@ input.delete:focus,
 input.delete:hover,
 input.delete:focus {
   text-decoration: underline !important;
-  color: #e21414; }
+  color: #ba291f; }
 
 /* line 114, ../../scss/editor/_forms.scss */
 select {
@@ -489,7 +489,7 @@ label {
     background: rgba(82, 126, 62, 0.9); }
   /* line 173, ../../scss/editor/_forms.scss */
   .alert.error {
-    background: #e21414;
+    background: #ba291f;
     background: rgba(161, 23, 23, 0.9); }
   /* line 178, ../../scss/editor/_forms.scss */
   .alert.active {
@@ -627,7 +627,7 @@ a.preview-button {
     width: 520px; } }
 /* line 2, ../../scss/editor/_sidebar.scss */
 #sidebar {
-  background: #5d1f6a;
+  background: #ba291f;
   color: #f7f7f7;
   height: 100%;
   padding: 0;
@@ -649,7 +649,7 @@ a.preview-button {
       transition: background-color 0.2s ease-in; }
       /* line 24, ../../scss/editor/_sidebar.scss */
       #sidebar h2 a:hover {
-        background: #a236b9; }
+        background: #e4645b; }
 
 /* line 31, ../../scss/editor/_sidebar.scss */
 #sidebar {
@@ -704,15 +704,15 @@ a.preview-button {
       padding: 12px; }
       /* line 27, ../../scss/editor/_menu.scss */
       .nav-collapse li a:hover, .nav-collapse li a:focus, .nav-collapse li a:active {
-        background-color: #3a1343;
+        background-color: #8e1f18;
         color: #fff; }
       /* line 32, ../../scss/editor/_menu.scss */
       .nav-collapse li a.active {
-        background-color: #802b91; }
+        background-color: #dc3b30; }
       /* line 36, ../../scss/editor/_menu.scss */
       .nav-collapse li a.logout {
         margin-top: 12px;
-        background-color: #290e2f; }
+        background-color: #781b14; }
     /* line 42, ../../scss/editor/_menu.scss */
     .nav-collapse li.tel {
       display: none; }
@@ -856,14 +856,14 @@ a.preview-button {
         padding: 18px; }
         /* line 178, ../../scss/editor/_menu.scss */
         .nav-collapse li a:hover, .nav-collapse li a:focus, .nav-collapse li a:active {
-          background-color: #3a1343; }
+          background-color: #8e1f18; }
         /* line 182, ../../scss/editor/_menu.scss */
         .nav-collapse li a.active {
           background: #f7f7f7;
-          color: #5d1f6a; }
+          color: #ba291f; }
         /* line 187, ../../scss/editor/_menu.scss */
         .nav-collapse li a.logout {
-          background-color: #290e2f;
+          background-color: #781b14;
           margin-top: 24px; } }
 /* line 18, ../../scss/editor/_buttons.scss */
 ul {
@@ -898,9 +898,9 @@ button {
   text-decoration: none !important;
   text-align: center;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-  box-shadow: 1px 2px 0px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 0px 1px rgba(0, 0, 0, 0.15);
   border: none;
-  border-bottom: 5px solid #c4c4c4;
+  border-bottom: 3px solid #c4c4c4;
   border-radius: none !important; }
   /* line 56, ../../scss/editor/_buttons.scss */
   .button:after, .button:before,
@@ -916,18 +916,18 @@ button {
   button:hover,
   button:focus {
     background: #d0d0d0;
-    border-bottom: 5px solid #bfbfbf;
+    border-bottom: 3px solid #bfbfbf;
     outline: none; }
   /* line 70, ../../scss/editor/_buttons.scss */
   .button:active,
   button:active {
-    margin-top: 0 !important;
-    border-bottom: 2px solid #bfbfbf; }
+    margin-top: -1px !important;
+    border-bottom: 1px solid #bfbfbf; }
   /* line 115, ../../scss/editor/_buttons.scss */
   .button.green,
   button.green {
     background: #77e427;
-    border-bottom: 5px solid #64c919; }
+    border-bottom: 3px solid #64c919; }
     /* line 80, ../../scss/editor/_buttons.scss */
     .button.green:hover, .button.green:focus,
     button.green:hover,
@@ -939,12 +939,12 @@ button {
     button.green:active {
       border-bottom: 2px solid #5fc018;
       box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.1);
-      margin-bottom: -5px; }
+      margin-bottom: -3px; }
   /* line 119, ../../scss/editor/_buttons.scss */
   .button.blue,
   button.blue {
     background: #14b8db;
-    border-bottom: 5px solid #1199b6; }
+    border-bottom: 3px solid #1199b6; }
     /* line 97, ../../scss/editor/_buttons.scss */
     .button.blue:hover, .button.blue:focus,
     button.blue:hover,
@@ -954,21 +954,22 @@ button {
     /* line 102, ../../scss/editor/_buttons.scss */
     .button.blue:active,
     button.blue:active {
-      border-bottom: 2px solid #1091ac;
+      border-bottom: 1px solid #1091ac;
       box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.1); }
 
 /* line 20, ../../scss/editor/editor.scss */
 html {
-  background: #f7f7f7; }
-  /* line 23, ../../scss/editor/editor.scss */
+  background: #f7f7f7;
+  color: #222; }
+  /* line 24, ../../scss/editor/editor.scss */
   html#login {
-    background: #5d1f6a; }
+    background: #ba291f; }
 
-/* line 28, ../../scss/editor/editor.scss */
+/* line 29, ../../scss/editor/editor.scss */
 body {
-  font-family: "Montserrat", sans-serif; }
+  font-family: sans-serif; }
 
-/* line 33, ../../scss/editor/editor.scss */
+/* line 34, ../../scss/editor/editor.scss */
 #content {
   height: auto;
   padding-right: 20px;
@@ -978,42 +979,42 @@ body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
-/* line 43, ../../scss/editor/editor.scss */
+/* line 44, ../../scss/editor/editor.scss */
 #sidebar, #content {
   float: left; }
 
-/* line 48, ../../scss/editor/editor.scss */
+/* line 49, ../../scss/editor/editor.scss */
 h3 {
   margin-top: 0; }
 
 /* Login form */
-/* line 55, ../../scss/editor/editor.scss */
+/* line 56, ../../scss/editor/editor.scss */
 #login body {
-  background: #5d1f6a; }
-/* line 61, ../../scss/editor/editor.scss */
+  background: #ba291f; }
+/* line 62, ../../scss/editor/editor.scss */
 #login h2 {
   text-align: center;
   color: #fff;
   margin: 0;
   margin-bottom: 24px;
   padding-top: 24px; }
-/* line 69, ../../scss/editor/editor.scss */
+/* line 70, ../../scss/editor/editor.scss */
 #login p {
   text-align: center; }
-/* line 73, ../../scss/editor/editor.scss */
+/* line 74, ../../scss/editor/editor.scss */
 #login a {
   color: #fff; }
-/* line 77, ../../scss/editor/editor.scss */
+/* line 78, ../../scss/editor/editor.scss */
 #login form {
   width: 90%;
   margin: 0 auto; }
-  /* line 81, ../../scss/editor/editor.scss */
+  /* line 82, ../../scss/editor/editor.scss */
   #login form fieldset {
     padding: 12px;
     padding-bottom: 24px;
     margin-bottom: 24px;
     box-shadow: none; }
-  /* line 90, ../../scss/editor/editor.scss */
+  /* line 91, ../../scss/editor/editor.scss */
   #login form input[type="text"],
   #login form input[type="password"],
   #login form input[type="email"] {
@@ -1022,72 +1023,72 @@ h3 {
     margin-bottom: 6px;
     background: #f7f7f7;
     width: 100%; }
-  /* line 98, ../../scss/editor/editor.scss */
+  /* line 99, ../../scss/editor/editor.scss */
   #login form .button {
     width: 100%; }
-  /* line 102, ../../scss/editor/editor.scss */
+  /* line 103, ../../scss/editor/editor.scss */
   #login form label {
     margin-bottom: 6px; }
 
 /* End Login form */
 /* Table Styles */
-/* line 115, ../../scss/editor/editor.scss */
+/* line 116, ../../scss/editor/editor.scss */
 table th,
 table td {
   padding: 12px;
   line-height: 1.5; }
 
-/* line 120, ../../scss/editor/editor.scss */
+/* line 121, ../../scss/editor/editor.scss */
 table form {
   padding: 0;
   margin: 0; }
 
-/* line 126, ../../scss/editor/editor.scss */
+/* line 127, ../../scss/editor/editor.scss */
 th.order {
   width: 20px; }
-/* line 129, ../../scss/editor/editor.scss */
+/* line 130, ../../scss/editor/editor.scss */
 th.description {
   width: 250px; }
-/* line 132, ../../scss/editor/editor.scss */
+/* line 133, ../../scss/editor/editor.scss */
 th.price {
   width: 80px; }
-/* line 135, ../../scss/editor/editor.scss */
+/* line 136, ../../scss/editor/editor.scss */
 th.menu {
   width: 100px; }
-/* line 139, ../../scss/editor/editor.scss */
+/* line 140, ../../scss/editor/editor.scss */
 th td.actions {
   opacity: 0.3; }
-/* line 144, ../../scss/editor/editor.scss */
+/* line 145, ../../scss/editor/editor.scss */
 th.hover td.actions {
   opacity: 1; }
 
-/* line 153, ../../scss/editor/editor.scss */
+/* line 154, ../../scss/editor/editor.scss */
 table.item-list thead tr {
   background: #222;
   color: #f7f7f7; }
-  /* line 158, ../../scss/editor/editor.scss */
+  /* line 159, ../../scss/editor/editor.scss */
   table.item-list thead tr th {
     padding: 6px 12px; }
-    /* line 162, ../../scss/editor/editor.scss */
+    /* line 163, ../../scss/editor/editor.scss */
     table.item-list thead tr th.blank {
       background-color: #f7f7f7; }
-/* line 170, ../../scss/editor/editor.scss */
+/* line 171, ../../scss/editor/editor.scss */
 table.item-list thead.subheader th {
   background: #ddd;
   color: #666;
   text-align: left;
   font-size: 14px; }
-/* line 181, ../../scss/editor/editor.scss */
+/* line 182, ../../scss/editor/editor.scss */
 table.item-list tbody td {
   padding: 12px 2px; }
-  /* line 184, ../../scss/editor/editor.scss */
+  /* line 185, ../../scss/editor/editor.scss */
   table.item-list tbody td.option {
     white-space: nowrap;
     padding-left: 12px; }
-/* line 191, ../../scss/editor/editor.scss */
+/* line 192, ../../scss/editor/editor.scss */
 table.item-list tbody tr.odd, table.item-list tbody tr.odd tr.options {
   background-color: #eee; }
-/* line 196, ../../scss/editor/editor.scss */
+/* line 197, ../../scss/editor/editor.scss */
 table.item-list tbody tr.options td {
   padding: 0 12px;
   color: #666;
@@ -1095,26 +1096,26 @@ table.item-list tbody tr.options td {
 
 /* End Item List */
 /* End Table Styles */
-/* line 211, ../../scss/editor/editor.scss */
+/* line 212, ../../scss/editor/editor.scss */
 table.item-list tbody input[type='text'] {
   background: transparent;
   border: none;
   padding: 12px; }
-  /* line 217, ../../scss/editor/editor.scss */
+  /* line 218, ../../scss/editor/editor.scss */
   table.item-list tbody input[type='text']:hover {
     background: #fff;
     cursor: pointer; }
-  /* line 222, ../../scss/editor/editor.scss */
+  /* line 223, ../../scss/editor/editor.scss */
   table.item-list tbody input[type='text']:focus {
     background: #fff;
     cursor: text; }
 
 /* Button Styles */
-/* line 232, ../../scss/editor/editor.scss */
+/* line 233, ../../scss/editor/editor.scss */
 form input.button {
   border-radius: none !important; }
 
-/* line 237, ../../scss/editor/editor.scss */
+/* line 238, ../../scss/editor/editor.scss */
 .button.small,
 table.item-list tbody input.button {
   padding: 6px 8px;
@@ -1123,44 +1124,44 @@ table.item-list tbody input.button {
   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.1);
   border-radius: none; }
 
-/* line 245, ../../scss/editor/editor.scss */
+/* line 246, ../../scss/editor/editor.scss */
 .add-subitem:hover, .add-subitem:focus {
   text-decoration: underline !important;
   color: #14b8db; }
 
-/* line 250, ../../scss/editor/editor.scss */
+/* line 251, ../../scss/editor/editor.scss */
 .tools {
   margin-top: 24px; }
-  /* line 253, ../../scss/editor/editor.scss */
+  /* line 254, ../../scss/editor/editor.scss */
   .tools form {
     margin: 0;
     margin-right: 24px;
     padding-bottom: 24px; }
-  /* line 259, ../../scss/editor/editor.scss */
+  /* line 260, ../../scss/editor/editor.scss */
   .tools h3 {
     margin: 0; }
 
 /* Sortable List */
-/* line 266, ../../scss/editor/editor.scss */
+/* line 267, ../../scss/editor/editor.scss */
 tr.slip-reordering {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important; }
 
-/* line 270, ../../scss/editor/editor.scss */
+/* line 271, ../../scss/editor/editor.scss */
 .move-handle {
   cursor: ns-resize;
   font-size: 24px;
   text-align: center;
   color: #999; }
-  /* line 276, ../../scss/editor/editor.scss */
+  /* line 277, ../../scss/editor/editor.scss */
   .move-handle:hover {
     color: #333; }
-  /* line 280, ../../scss/editor/editor.scss */
+  /* line 281, ../../scss/editor/editor.scss */
   .move-handle:after {
     content: " \2261"; }
 
 /* End Sortable List */
 /* Footer */
-/* line 290, ../../scss/editor/editor.scss */
+/* line 291, ../../scss/editor/editor.scss */
 #footer {
   text-align: left;
   padding-left: 20px;
@@ -1168,30 +1169,30 @@ tr.slip-reordering {
   padding-top: 40px;
   line-height: 150%;
   color: #999999; }
-  /* line 298, ../../scss/editor/editor.scss */
+  /* line 299, ../../scss/editor/editor.scss */
   #footer .logo {
     display: inline-block;
     width: 80px;
     height: auto; }
-  /* line 304, ../../scss/editor/editor.scss */
+  /* line 305, ../../scss/editor/editor.scss */
   #footer a {
     color: #999999;
     font-size: 14px; }
-    /* line 308, ../../scss/editor/editor.scss */
+    /* line 309, ../../scss/editor/editor.scss */
     #footer a.right {
       padding-top: 12px; }
 
 /* End Footer */
 /* Helper Classes */
-/* line 319, ../../scss/editor/editor.scss */
+/* line 320, ../../scss/editor/editor.scss */
 .left {
   float: left; }
 
-/* line 320, ../../scss/editor/editor.scss */
+/* line 321, ../../scss/editor/editor.scss */
 .right {
   float: right; }
 
-/* line 322, ../../scss/editor/editor.scss */
+/* line 323, ../../scss/editor/editor.scss */
 .grey {
   color: #666;
   font-weight: 300;
@@ -1199,37 +1200,37 @@ tr.slip-reordering {
   margin-left: 12px;
   font-family: sans-serif; }
 
-/* line 330, ../../scss/editor/editor.scss */
+/* line 331, ../../scss/editor/editor.scss */
 #content .grey {
   margin-left: 0;
   font-size: 14px; }
 
-/* line 336, ../../scss/editor/editor.scss */
+/* line 337, ../../scss/editor/editor.scss */
 .reveal-modal form {
   margin: 0 !important; }
 
-/* line 341, ../../scss/editor/editor.scss */
+/* line 342, ../../scss/editor/editor.scss */
 .nolist {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-/* line 347, ../../scss/editor/editor.scss */
+/* line 348, ../../scss/editor/editor.scss */
 .img {
   padding-right: 24px; }
 
 /* End Helper Classes */
 /* Columns for photos */
-/* line 355, ../../scss/editor/editor.scss */
+/* line 356, ../../scss/editor/editor.scss */
 .column-3 {
   width: 100%;
   float: left; }
-  /* line 359, ../../scss/editor/editor.scss */
+  /* line 360, ../../scss/editor/editor.scss */
   .column-3 img {
     max-width: 100%; }
 
 /* List of open days in Options.php */
-/* line 367, ../../scss/editor/editor.scss */
+/* line 368, ../../scss/editor/editor.scss */
 #days-list li {
   padding: 10px;
   display: block;
@@ -1237,25 +1238,25 @@ tr.slip-reordering {
   cursor: pointer;
   color: #999999;
   width: 100%; }
-  /* line 375, ../../scss/editor/editor.scss */
+  /* line 376, ../../scss/editor/editor.scss */
   #days-list li:after {
     content: '\2713';
     color: #f7f7f7;
     float: right;
     line-height: 1;
     margin-left: 6px; }
-  /* line 383, ../../scss/editor/editor.scss */
+  /* line 384, ../../scss/editor/editor.scss */
   #days-list li.active, #days-list li.selected {
     background: #333333;
     color: #fff; }
-    /* line 387, ../../scss/editor/editor.scss */
+    /* line 388, ../../scss/editor/editor.scss */
     #days-list li.active:after, #days-list li.selected:after {
       content: '\2713';
       color: #77e427; }
 
 /* End List of open days */
 /* Menu Categories */
-/* line 402, ../../scss/editor/editor.scss */
+/* line 403, ../../scss/editor/editor.scss */
 .categories li {
   float: none;
   padding: 0;
@@ -1263,7 +1264,7 @@ tr.slip-reordering {
   margin: 0; }
 
 /* Markdown Formatting */
-/* line 413, ../../scss/editor/editor.scss */
+/* line 414, ../../scss/editor/editor.scss */
 .preview {
   min-height: 80px;
   width: 100%;
@@ -1273,62 +1274,62 @@ tr.slip-reordering {
   padding: 12px;
   font-family: sans-serif;
   line-height: 1.4; }
-  /* line 423, ../../scss/editor/editor.scss */
+  /* line 424, ../../scss/editor/editor.scss */
   .preview ul {
     display: block;
     clear: both;
     margin-bottom: 12px; }
-  /* line 429, ../../scss/editor/editor.scss */
+  /* line 430, ../../scss/editor/editor.scss */
   .preview li {
     display: block;
     float: none;
     margin: 6px 0;
     list-style: disc inside !important; }
-    /* line 435, ../../scss/editor/editor.scss */
+    /* line 436, ../../scss/editor/editor.scss */
     .preview li:before {
       content: '\2022';
       padding-right: 6px; }
 
-/* line 443, ../../scss/editor/editor.scss */
+/* line 444, ../../scss/editor/editor.scss */
 #markdown-tips strong {
   font-weight: 300;
   color: #499312; }
-  /* line 447, ../../scss/editor/editor.scss */
+  /* line 448, ../../scss/editor/editor.scss */
   #markdown-tips strong.regular {
     font-weight: 700;
     color: #333333; }
-/* line 453, ../../scss/editor/editor.scss */
+/* line 454, ../../scss/editor/editor.scss */
 #markdown-tips h2, #markdown-tips h3 {
   display: inline;
   margin: 0; }
 
 /* End Markdown Formatting */
 @media only screen and (min-width: 40.063em) {
-  /* line 463, ../../scss/editor/editor.scss */
+  /* line 464, ../../scss/editor/editor.scss */
   html {
-    border-top: 20px solid #5d1f6a; }
+    border-top: 20px solid #ba291f; }
 
-  /* line 467, ../../scss/editor/editor.scss */
+  /* line 468, ../../scss/editor/editor.scss */
   #content {
     padding-left: 240px;
     overflow: auto; }
 
-  /* line 472, ../../scss/editor/editor.scss */
+  /* line 473, ../../scss/editor/editor.scss */
   .column-3 {
     width: 33.33333%; }
 
-  /* line 477, ../../scss/editor/editor.scss */
+  /* line 478, ../../scss/editor/editor.scss */
   #login form {
     width: 400px; }
 
-  /* line 483, ../../scss/editor/editor.scss */
+  /* line 484, ../../scss/editor/editor.scss */
   #days-list li {
     width: auto; }
 
-  /* line 490, ../../scss/editor/editor.scss */
+  /* line 491, ../../scss/editor/editor.scss */
   #footer {
     padding-left: 240px; } }
 @media only screen and (min-width: 64.063em) {
-  /* line 498, ../../scss/editor/editor.scss */
+  /* line 499, ../../scss/editor/editor.scss */
   .preview {
     width: 80%; } }

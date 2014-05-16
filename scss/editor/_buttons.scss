@@ -48,9 +48,9 @@ body {
   text-decoration: none !important;
   text-align: center;  
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); 
-  box-shadow: 1px 2px 0px 2px rgba(0,0,0,0.15);
+  box-shadow: 1px 2px 0px 1px rgba(0,0,0,0.15);
   border: none;
-  border-bottom: 5px solid darken($color-grey,8%);
+  border-bottom: 3px solid darken($color-grey,8%);
   border-radius: none !important;
 
   &:after, &:before {
@@ -63,19 +63,19 @@ body {
   
   &:hover, &:focus {
     background: darken($color-grey,3%);
-    border-bottom: 5px solid darken($color-grey,10%);
+    border-bottom: 3px solid darken($color-grey,10%);
     outline: none;
   }
   
   &:active {
-    margin-top: 0 !important;
-    border-bottom: 2px solid darken($color-grey,10%);
+    margin-top: -1px !important;
+    border-bottom: 1px solid darken($color-grey,10%);
   } 
 }
 
 @mixin block-button-green() {    
   background: $color-green;
-  border-bottom: 5px solid darken($color-green,8%); 
+  border-bottom: 3px solid darken($color-green,8%); 
   
   &:hover, &:focus {
     background: darken($color-green,3%);
@@ -85,14 +85,14 @@ body {
   &:active {
     border-bottom: 2px solid darken($color-green,10%);
     box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
-    margin-bottom: -5px;
+    margin-bottom: -3px;
     
   } 
 }
 
 @mixin block-button-blue() {    
   background: $color-blue;
-  border-bottom: 5px solid darken($color-blue,8%); 
+  border-bottom: 3px solid darken($color-blue,8%); 
   
   &:hover, &:focus {
     background: darken($color-blue,3%);
@@ -100,7 +100,7 @@ body {
   }
   
   &:active {
-    border-bottom: 2px solid darken($color-blue,10%);
+    border-bottom: 1px solid darken($color-blue,10%);
     box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.1);  
   } 
 }

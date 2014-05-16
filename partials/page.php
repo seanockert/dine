@@ -3,7 +3,8 @@
   <div class="hero clearfix">
     <div class="row">
         <div class="columns large-12">
-          <h1><a href="./" title="Return to homepage" data-instant><?php echo $site_options->name; ?></a></h1>  
+                      
+          <h1><img src="images/logo-light.png" width="160"><br> <a href="./" title="Return to homepage" data-instant><?php echo $site_options->name; ?></a></h1>  
         </div> 
 
         <div class="columns large-4 small-6 hours">
@@ -53,7 +54,7 @@
         <div class="clear"></div>
         <br>
         
-        <div class="columns large-4 large-centered medium-centered contact">
+        <div class="columns large-5 large-centered medium-centered contact">
           <h3><?php
             if ($helper->is_open($site_options->days)) {
                 echo 'Yes, we\'re open today.';

@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var compass = require('gulp-compass');
+var compass = require('gulp-minify-html');
 
 // Lint JS
 gulp.task('lint', function() {
@@ -36,6 +37,12 @@ gulp.task('compass', function() {
         .pipe(gulp.dest('css'));
 });
 
+gulp.task('minify-html', function() {
+  gulp.src('./*.html')
+    .pipe(minifyHTML(opts))
+    .pipe(gulp.dest('./dist/'))
+});
+
 // Default
 gulp.task('default', function(){
   gulp.run('minify', 'compass'); //, 'uncss'
@@ -53,5 +60,10 @@ gulp.task('default', function(){
   // Watch CSS Files
   gulp.watch("./css/*.css", function(event){
     //gulp.run('uncss');
+  });  
+  
+  // Watch HTML Files
+  gulp.watch("./*.html", function(event){
+    gulp.run('minify-html');
   });
 });

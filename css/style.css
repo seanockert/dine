@@ -1410,77 +1410,91 @@ object, embed {
 /* line 5, ../scss/_global.scss */
 body {
   background: #f8f5ee url("../images/bg-dirt.png");
-  color: #493e3c;
+  color: #314046;
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-family: "PT Serif", serif;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.45;
   position: relative; }
 
 /* Miscellaneous useful HTML classes ---------------------- */
-/* line 17, ../scss/_global.scss */
+/* line 18, ../scss/_global.scss */
 .left {
   float: left !important; }
 
-/* line 18, ../scss/_global.scss */
+/* line 19, ../scss/_global.scss */
 .right {
   float: right !important; }
 
-/* line 19, ../scss/_global.scss */
+/* line 20, ../scss/_global.scss */
 .text-left {
   text-align: left !important; }
 
-/* line 20, ../scss/_global.scss */
+/* line 21, ../scss/_global.scss */
 .text-right {
   text-align: right !important; }
 
-/* line 21, ../scss/_global.scss */
+/* line 22, ../scss/_global.scss */
 .text-center {
   text-align: center !important; }
 
-/* line 22, ../scss/_global.scss */
+/* line 23, ../scss/_global.scss */
 .text-justify {
   text-align: justify !important; }
 
-/* line 23, ../scss/_global.scss */
+/* line 24, ../scss/_global.scss */
 .hidden {
   display: none; }
 
-/* line 27, ../scss/_global.scss */
+/* line 28, ../scss/_global.scss */
 .antialiased {
   -webkit-font-smoothing: antialiased; }
 
 /* Links  ---------------------- */
-/* line 32, ../scss/_global.scss */
+/* line 33, ../scss/_global.scss */
 a {
   color: #0093d3;
-  text-decoration: underline; }
-  /* line 36, ../scss/_global.scss */
+  text-decoration: none; }
+  /* line 37, ../scss/_global.scss */
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: #006fa0; }
 
-/* line 42, ../scss/_global.scss */
+/* line 43, ../scss/_global.scss */
 a:focus {
   outline: none; }
 
+/* line 47, ../scss/_global.scss */
+.content a {
+  border-bottom: 1px solid #0093d3; }
+  /* line 50, ../scss/_global.scss */
+  .content a:hover {
+    border-bottom: 1px solid #006fa0; }
+
 /* Lists  ---------------------- */
-/* line 48, ../scss/_global.scss */
+/* line 59, ../scss/_global.scss */
 ul li, ol li {
   margin-bottom: 6px; }
 
+/* Headers  ---------------------- */
+/* line 67, ../scss/_global.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", serif;
+  line-height: 1.25; }
+
 /* Header  ---------------------- */
-/* line 57, ../scss/_global.scss */
+/* line 75, ../scss/_global.scss */
 h3 {
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 6px; }
 
-/* line 62, ../scss/_global.scss */
+/* line 80, ../scss/_global.scss */
 p {
   margin-top: 0; }
 
-/* line 67, ../scss/_global.scss */
+/* line 85, ../scss/_global.scss */
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -1493,59 +1507,57 @@ nav ul {
     /* line 101, ../scss/_functions.scss */
     nav ul > li:last-child {
       margin-right: 0px; }
-  /* line 70, ../scss/_global.scss */
+  /* line 88, ../scss/_global.scss */
   nav ul li a {
     display: block;
     padding: 12px;
     text-decoration: none;
-    color: #444444; }
-    /* line 76, ../scss/_global.scss */
+    color: #314046; }
+    /* line 94, ../scss/_global.scss */
     nav ul li a:hover {
       background: #dddddd;
       text-decoration: none; }
-    /* line 81, ../scss/_global.scss */
+    /* line 99, ../scss/_global.scss */
     nav ul li a:active {
       background: #333333;
       color: #fff; }
-    /* line 86, ../scss/_global.scss */
+    /* line 104, ../scss/_global.scss */
     nav ul li a.active {
       font-weight: 700; }
 
 /* Reusable Layouts  ---------------------- */
-/* line 95, ../scss/_global.scss */
+/* line 113, ../scss/_global.scss */
 .box {
   padding: 12px;
   background: #fff; }
 
 /* Hero Banner  ---------------------- */
-/* line 103, ../scss/_global.scss */
+/* line 121, ../scss/_global.scss */
 .hero {
-  background: #5d1f6a url("../images/macaroons.jpg") no-repeat top center;
+  background: #ba291f url(../images/header-bg.jpg) no-repeat top center;
   background-size: cover;
   color: #fff;
   padding: 12px 0; }
-  /* line 109, ../scss/_global.scss */
+  /* line 127, ../scss/_global.scss */
   .hero a {
     text-decoration: none; }
-  /* line 113, ../scss/_global.scss */
+  /* line 131, ../scss/_global.scss */
   .hero h1 {
     margin: 0;
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: 24px; }
-    /* line 119, ../scss/_global.scss */
+    /* line 136, ../scss/_global.scss */
     .hero h1 a:hover {
       text-decoration: none; }
-  /* line 124, ../scss/_global.scss */
+  /* line 141, ../scss/_global.scss */
   .hero h3 {
     margin: 0;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase; }
-  /* line 131, ../scss/_global.scss */
+    font-size: 16px;
+    font-weight: 400; }
+  /* line 147, ../scss/_global.scss */
   .hero a {
     color: #fff; }
-  /* line 135, ../scss/_global.scss */
+  /* line 151, ../scss/_global.scss */
   .hero .menu {
     display: block;
     padding: 12px;
@@ -1553,39 +1565,40 @@ nav ul {
     border: 2px solid #fff;
     color: #fff;
     background: rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
     text-shadow: none;
-    margin-top: 24px; }
-    /* line 146, ../scss/_global.scss */
+    margin-top: 24px;
+    font-family: "Open Sans", serif;
+    text-transform: uppercase; }
+    /* line 163, ../scss/_global.scss */
     .hero .menu:hover {
       background: #fff;
       color: #493e3c;
       text-decoration: none; }
-  /* line 154, ../scss/_global.scss */
+  /* line 171, ../scss/_global.scss */
   .hero.menu-hero h1 {
     text-align: left;
     margin-bottom: 0; }
-  /* line 159, ../scss/_global.scss */
+  /* line 176, ../scss/_global.scss */
   .hero.menu-hero .menu {
     margin-top: 0; }
 
-/* line 166, ../scss/_global.scss */
+/* line 183, ../scss/_global.scss */
 .location a {
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: underline; }
 
 /* Content  ---------------------- */
-/* line 174, ../scss/_global.scss */
+/* line 191, ../scss/_global.scss */
 .content {
   margin-bottom: 24px; }
-  /* line 177, ../scss/_global.scss */
+  /* line 194, ../scss/_global.scss */
   .content h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 0;
     padding: 0;
-    color: #5d1f6a; }
+    color: #ba291f; }
 
-/* line 185, ../scss/_global.scss */
+/* line 202, ../scss/_global.scss */
 #menu {
   list-style-type: none;
   padding: 0;
@@ -1594,33 +1607,38 @@ nav ul {
   /* line 112, ../scss/_functions.scss */
   #menu > li {
     display: block; }
-  /* line 188, ../scss/_global.scss */
+  /* line 205, ../scss/_global.scss */
   #menu h3 {
     margin-bottom: 0; }
-  /* line 192, ../scss/_global.scss */
+  /* line 209, ../scss/_global.scss */
   #menu .description {
     margin-top: 0; }
 
-/* line 197, ../scss/_global.scss */
+/* line 214, ../scss/_global.scss */
 .content img {
   text-align: center;
   margin-bottom: 12px; }
 
-/* line 202, ../scss/_global.scss */
+/* line 219, ../scss/_global.scss */
 .demo img {
   max-width: 80% !important; }
 
-/* line 206, ../scss/_global.scss */
-.contact h3 {
-  font-size: 20px; }
+/* line 223, ../scss/_global.scss */
+.contact {
+  text-align: center; }
+  /* line 226, ../scss/_global.scss */
+  .contact h3 {
+    font-size: 22px; }
 
-/* line 210, ../scss/_global.scss */
+/* line 231, ../scss/_global.scss */
 footer, #footer {
   padding-top: 24px;
   padding-bottom: 24px;
   margin-top: 24px;
-  border-top: 1px solid #dddddd; }
-  /* line 216, ../scss/_global.scss */
+  border-top: 1px solid #dddddd;
+  font-family: "Open Sans", serif;
+  font-size: 16px; }
+  /* line 239, ../scss/_global.scss */
   footer ul, #footer ul {
     list-style-type: none;
     padding: 0;
@@ -1633,21 +1651,21 @@ footer, #footer {
 /* Mobile and up media queries  ---------------------- */
 /* Tablet and up media queries  ---------------------- */
 @media only screen and (min-width: 40.063em) {
-  /* line 233, ../scss/_global.scss */
+  /* line 256, ../scss/_global.scss */
   .hero {
     padding: 120px 0;
-    font-size: 20px; }
-    /* line 238, ../scss/_global.scss */
+    font-size: 22px; }
+    /* line 261, ../scss/_global.scss */
     .hero.menu-hero {
       padding: 24px 0; }
 
-  /* line 243, ../scss/_global.scss */
+  /* line 266, ../scss/_global.scss */
   .content img {
     float: right;
     margin-top: -30px;
     padding-left: 20px; }
 
-  /* line 249, ../scss/_global.scss */
+  /* line 272, ../scss/_global.scss */
   .demo img {
     max-width: 100% !important; } }
 /* Desktop and up media queries  ---------------------- */
