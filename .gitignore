@@ -1,5 +1,7 @@
 .DS_Store
 .sass-cache
 cache/
-images/bg-dirt.psd
 _assets/
+_RESOURCES/
+node_modules/
+*.old

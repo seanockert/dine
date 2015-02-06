@@ -1,6 +1,6 @@
 <?php
-    require('dine/loader.php'); 
-
+error_reporting(E_ALL);
+    require('dine/loader.php');
     $page = 'menu';
     
     // Set caching
@@ -30,57 +30,55 @@
 <?php include('partials/header.php'); ?>
 
 <div class="container">
-  
+
   <div class="hero menu-hero clearfix">
     <div class="row">
         <div class="columns large-9">
           <h1><a href="./" title="Return to homepage" data-instant><?php echo $site_options->name; ?></a></h1>  
-        </div>      
-        
+        </div>
+
         <div class="columns large-3">
-          <a href="./" class="menu" data-instant>Return Home</a> 
-        </div>    
-                       
+          <a href="./" class="menu" data-instant>Return Home</a>
+        </div>
+
         <div class="clear"></div>
     </div>
   </div>
-  
+
    <div class="row">
       <div class="columns large-6 medium-8 large-centered medium-centered">
-        
+
         <h1>Dining Menu</h1>
       	<ul id="menu">
             <?php
-              if (count($menu_items_by_category) > 0) { 
-                
-                foreach($menu_items_by_category as $key => $menu_items) {
-                  echo '<h2>' . $category_titles[$key] . '</h2>';
-                      
-                  foreach($menu_items as $item) { ?>
-                      
-                      <li>
-                          <h3><?php echo $item->title; ?> 
-                          <strong class="price right">
-                            <?php echo $currency; echo $item->price; ?>
-                          </strong></h3>
-                          <p class="description"><em><?php echo $item->description; ?></em></p>
-                                                     
-                            <?php if (isset($sub_items_by_item[$item->id]) && count($sub_items_by_item[$item->id]) > 0) {  ?>
-                            <ul class="options">
-                              <?php foreach($sub_items_by_item[$item->id] as $item_option) {  ?>
-                              <li>
-                                <?php echo $item_option->title; ?>
-                                <div class="right"><?php echo $currency; echo $item_option->price; ?></div>
-                              </li>      
-                              <?php } ?>
-                          </ul>
-                          <?php } ?>
-                      </li>    
+            if (count($menu_items_by_category) > 0) {
+              foreach($menu_items_by_category as $key => $menu_items) {
+                echo '<h2>' . $category_titles[$key] . '</h2>';
+
+                foreach($menu_items as $item) { ?>
+
+                    <li>
+                      <h3><?php echo $item->title; ?>
+                      <strong class="price right">
+                        <?php echo $currency; echo $item->price; ?>
+                      </strong></h3>
+                      <p class="description"><em><?php echo $item->description; ?></em></p>
+
+                      <?php if (isset($sub_items_by_item[$item->id]) && count($sub_items_by_item[$item->id]) > 0) {  ?>
+                      <ul class="options">
+                        <?php foreach($sub_items_by_item[$item->id] as $item_option) { ?>
+                          <li>
+                            <?php echo $item_option->title; ?>
+                            <div class="right"><?php echo $currency; echo $item_option->price; ?></div>
+                        </li>
+                        <?php } ?>
+                      </ul>
                       <?php } ?>
-                      <hr>
-            <? }    
-            } else {
-              echo '<li><em>Looks like there\'s nothing on the menu yet.</em></li>';
+                    </li>
+                <?php } ?>
+                <hr>
+
+              <?php }
             } ?>
       	</ul>
       </div>
